@@ -22,7 +22,7 @@
         <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFF0F0F0" BorderThickness="1.5" Grid.RowSpan="2" CornerRadius="2"/>
 
         <!--UpperPanel-->
-        <Grid Grid.Row="0" Margin="3 3 3 0" MouseDown="UpperPanel_MouseDown">
+        <Grid Grid.Row="0" Margin="3 3 3 0">
             <Border BorderBrush="#FF535353" Background="#FFC4C4C4" BorderThickness="0 0 0 1" Grid.ColumnSpan="2"/>
             <TextBlock Text="Диспетчерская автобусного парка №3" Padding="5" Foreground="Black" FontWeight="DemiBold" FontSize="12" VerticalAlignment="Center"/>
 
