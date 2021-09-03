@@ -58,6 +58,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Images\Icons\Add.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\Icons\Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\Icons\Exit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\Icons\Logout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\Icons\Minimize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\Icons\Question.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\ButtonsStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +103,24 @@
     <Compile Include="Controls\CornerTextBox.cs" />
     <Compile Include="Controls\DatePickerWatermarked.cs" />
     <Compile Include="Controls\IconButton.cs" />
+    <Compile Include="Images\Icons\Add.xaml.cs">
+      <DependentUpon>Add.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\Icons\Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\Icons\Exit.xaml.cs">
+      <DependentUpon>Exit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\Icons\Logout.xaml.cs">
+      <DependentUpon>Logout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\Icons\Minimize.xaml.cs">
+      <DependentUpon>Minimize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\Icons\Question.xaml.cs">
+      <DependentUpon>Question.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
@@ -114,7 +156,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Models\" />
   </ItemGroup>
