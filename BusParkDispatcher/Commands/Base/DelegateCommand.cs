@@ -17,8 +17,8 @@ namespace BusParkDispatcher.Commands.Base
             _canExecute = canExecute;
         }
 
-        public override bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
+        public override bool CanExecute(object parameter = null) => _canExecute?.Invoke(parameter) ?? true;
 
-        public override void Execute(object parameter) => _execute(parameter);
+        public override void Execute(object parameter = null) => _execute(parameter);
     }
 }
