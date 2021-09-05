@@ -1,4 +1,5 @@
 ﻿using BusParkDispatcher.Commands.Base;
+using BusParkDispatcher.Views;
 using BusParkDispatcher.Views.Windows;
 using System;
 using System.Collections.Generic;
@@ -66,11 +67,24 @@ namespace BusParkDispatcher.ViewModels
         #endregion
 
         #region Constructors
+        public MainWindowViewModel()
+        {
+            OpenMain?.Execute();
+        }
         #endregion
 
         #region Commands / Methods
         public void ChangeView(UserControl userControl) => CurrentView = userControl;
 
+        public DelegateCommand OpenMain => new DelegateCommand((obj) =>
+        {
+            ChangeView(new MainView());
+        });
+
+        public DelegateCommand OpenDataBase => new DelegateCommand((obj) =>
+        {
+            ChangeView(new DataBaseView());
+        });
         #endregion
     }
 }
