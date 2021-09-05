@@ -5,23 +5,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BusParkDispatcher.Views"
              xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels"
-             mc:Ignorable="d" MinHeight="370" MinWidth="796">
+             mc:Ignorable="d" MinHeight="370" MinWidth="796" d:DesignHeight="370" d:DesignWidth="796">
     <UserControl.DataContext>
         <vm:DataBaseViewModel/>
     </UserControl.DataContext>
     
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="46"/>
+            <RowDefinition Height="78"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" IsChecked="True"/>
-            <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" />
-        </StackPanel>
+        <Grid Grid.Row="0" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Grid.Row="0" Grid.Column="0" FontSize="21" HorizontalAlignment="Center" Content="Маршруты" Style="{StaticResource RadioButtonMenuStyle}" IsChecked="True"/>
+            <RadioButton Grid.Row="1" Grid.Column="0" FontSize="21" HorizontalAlignment="Center" Content="Время" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="0" Grid.Column="1" FontSize="21" HorizontalAlignment="Center" Content="Водители" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="1" Grid.Column="1" FontSize="21" HorizontalAlignment="Center" Content="Расписания" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="0" Grid.Column="2" FontSize="21" HorizontalAlignment="Center" Content="Автобусы" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="0" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Content="Автобусы-водители" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="1" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Content="Маршруты-остановки" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="0" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Content="Время-расписание" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="1" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Content="Типы автобусов" Style="{StaticResource RadioButtonMenuStyle}" />
+        </Grid>
 
         <DataGrid Grid.Row="1" ItemsSource="{Binding Items, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" 
                   Style="{StaticResource DataGridStyle}" 
