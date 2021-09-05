@@ -2,14 +2,18 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:BusParkDispatcher"
-             StartupUri="MainWindow.xaml">
+             xmlns:cmd="clr-namespace:BusParkDispatcher.Commands"
+             StartupUri="/Views/Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Themes/InputBoxesStyles.xaml" />
                 <ResourceDictionary Source="/Themes/ButtonsStyles.xaml" />
+                <ResourceDictionary Source="/Themes/IconButtonsStyles.xaml" />
+                <ResourceDictionary Source="/Themes/RadioButtonsStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
         
     </Application.Resources>
 </Application>

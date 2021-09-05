@@ -4,6 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusParkDispatcher.Views.Windows"
+        xmlns:controls="clr-namespace:BusParkDispatcher.Controls"
+        xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels"
+        xmlns:cmd="clr-namespace:BusParkDispatcher.Commands"
         xmlns:notify="clr-namespace:Notifications.Wpf.Controls;assembly=Notifications.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" 
@@ -14,6 +17,15 @@
         WindowStartupLocation="CenterScreen" 
         MinHeight="{Binding MinHeight}" MinWidth="{Binding MinWidth}">
 
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <cmd:CloseApplicationCommand x:Key="CloseApplicationCommand"/>
+        <cmd:MinimizeApplicationCommand x:Key="MinimizeApplicationCommand"/>
+        <cmd:OpenHelpCommand x:Key="OpenHelpCommand"/>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -28,9 +40,9 @@
 
             <!-- Control buttons -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <!--<controls:IconButton Height="23" Margin="3 4" Style="{StaticResource QuestionButton}" Command="{Binding Help, Mode=OneWay}"/>
-                <controls:IconButton Height="23" Margin="3 4" Style="{StaticResource MinimizeButton}" Command="{Binding MinimizeApplication, Mode=OneWay}"/>
-                <controls:IconButton Height="23" Margin="3 4 6 4" Style="{StaticResource ExitButton}" Command="{Binding CloseApplication, Mode=OneWay}"/>-->
+                <controls:IconButton Height="23" Margin="3 4" Style="{StaticResource QuestionButton}" Command="{StaticResource OpenHelpCommand}"/>
+                <controls:IconButton Height="23" Margin="3 4" Style="{StaticResource MinimizeButton}" Command="{StaticResource MinimizeApplicationCommand}"/>
+                <controls:IconButton Height="23" Margin="3 4 6 4" Style="{StaticResource ExitButton}" Command="{StaticResource CloseApplicationCommand}"/>
             </StackPanel>
         </Grid>
 
@@ -44,7 +56,8 @@
             <!--#region Menu-->
             <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFFFF4F4" BorderThickness="0 0 0 1"/>
             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                
+                <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" IsChecked="True"/>
+                <RadioButton Content="База данных" Style="{StaticResource RadioButtonMenuStyle}"/>
             </StackPanel>
             <!--#endregion-->
 
