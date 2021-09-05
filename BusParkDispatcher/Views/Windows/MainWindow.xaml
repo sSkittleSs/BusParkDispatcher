@@ -63,8 +63,8 @@
             <!--#region Menu-->
             <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFFFF4F4" BorderThickness="0 0 0 1"/>
             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" IsChecked="True"/>
-                <RadioButton Content="База данных" Style="{StaticResource RadioButtonMenuStyle}"/>
+                <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenMain}" IsChecked="True"/>
+                <RadioButton Content="База данных" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
             </StackPanel>
             <!--#endregion-->
 
