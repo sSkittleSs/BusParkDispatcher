@@ -24,7 +24,11 @@
         <cmd:CloseApplicationCommand x:Key="CloseApplicationCommand"/>
         <cmd:MinimizeApplicationCommand x:Key="MinimizeApplicationCommand"/>
         <cmd:OpenHelpCommand x:Key="OpenHelpCommand"/>
+        <cmd:DragWindowCommand x:Key="DragWindowCommand"/>
     </Window.Resources>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" GlassFrameThickness="0" CornerRadius="0" />
+    </WindowChrome.WindowChrome>
     
     <Grid>
         <Grid.RowDefinitions>
@@ -35,6 +39,9 @@
 
         <!--UpperPanel-->
         <Grid Grid.Row="0" Margin="3 3 3 0">
+            <Grid.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{StaticResource DragWindowCommand}"/>
+            </Grid.InputBindings>
             <Border BorderBrush="#FF535353" Background="#FFC4C4C4" BorderThickness="0 0 0 1" Grid.ColumnSpan="2"/>
             <TextBlock Text="Диспетчерская автобусного парка №3" Padding="5" Foreground="Black" FontWeight="DemiBold" FontSize="12" VerticalAlignment="Center"/>
 

@@ -18,7 +18,7 @@
                           HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                           Background="{TemplateBinding Background}">
 
-                        <StackPanel Orientation="Vertical" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}">
                             <TextBlock Text="{TemplateBinding Property=Content}" VerticalAlignment="Center" HorizontalAlignment="Center" 
                                        FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" FontFamily="{TemplateBinding FontFamily}"/>
                             <Grid x:Name="UnderlineGrid">

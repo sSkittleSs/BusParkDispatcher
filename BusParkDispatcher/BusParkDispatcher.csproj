@@ -112,6 +112,7 @@
     <Compile Include="Commands\Base\Command.cs" />
     <Compile Include="Commands\Base\DelegateCommand.cs" />
     <Compile Include="Commands\CloseApplicationCommand.cs" />
+    <Compile Include="Commands\DragWindowCommand.cs" />
     <Compile Include="Commands\MinimizeApplicationCommand.cs" />
     <Compile Include="Commands\OpenHelpCommand.cs" />
     <Compile Include="Controls\BluredTextButton.cs" />
