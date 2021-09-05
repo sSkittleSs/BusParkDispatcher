@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:BusParkDispatcher.Themes">
+
+    <!--#region DataGridViews-->
+    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="SelectionUnit" Value="Cell"/>
+        <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="RowBackground" Value="#FFECECEC"/>
+        <Setter Property="AlternatingRowBackground" Value="#FFEAEEFF"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsGrouping" Value="true"/>
+                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CenterGridHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="#FFEAEEFF"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="CenterGridRowStyle" TargetType="DataGridRow">
+        <Setter Property="BorderThickness" Value="1 0 1 0"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+
+        <Style.Triggers>
+            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                <Setter Property="Foreground" Value="#FF000000" />
+                <Setter Property="BorderBrush" Value="#FF000000" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridRowHeaderStyle" TargetType="DataGridRowHeader">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DataGridRowStyle" TargetType="DataGridRow">
+        <Style.Triggers>
+            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                <Setter Property="Foreground" Value="#FF000000" />
+                <Setter Property="BorderBrush" Value="#FF000000" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+        <Style.Triggers>
+            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                <Setter Property="Background" Value="#4980FF9C" />
+                <Setter Property="Foreground" Value="#FF000000" />
+                <Setter Property="BorderBrush" Value="#FF00009F" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+
+</ResourceDictionary>
