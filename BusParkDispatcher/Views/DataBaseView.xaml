@@ -17,8 +17,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.RowSpan="4" Background="#10000000" CornerRadius="20"/>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Center">
+        <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="10 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -47,10 +48,10 @@
                   ColumnHeaderStyle="{StaticResource CenterGridHeaderStyle}" 
                   RowStyle="{StaticResource CenterGridRowStyle}" 
                   CellStyle="{StaticResource DataGridCellStyle}" 
-                  SelectionMode="Single" SelectionUnit="Cell" IsReadOnly="False"/>
+                  SelectionMode="Single" SelectionUnit="Cell" IsReadOnly="False" Margin="10 0"/>
 
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0">
             <uc:CornerTextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" WatermarkText="Поиск..."/>
             <Button Content="Сохранить изменения" Style="{StaticResource ButtonDefault}" Command="{Binding SaveChanges}" Width="250" Margin="10 0"/>
             <Button Content="Обновить данные таблицы" Style="{StaticResource ButtonDefault}" Command="{Binding Update}" Width="250" Margin="10 0"/>
