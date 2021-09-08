@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusParkDispatcher.Infrastructure
 {
@@ -24,7 +19,6 @@ namespace BusParkDispatcher.Infrastructure
                 string stringVal = Convert.ToString(val);
                 if (stringVal.ToLower().Contains(value.ToLower()))
                 {
-                    Debug.WriteLine(stringVal);
                     return true;
                 }
             }
