@@ -1,4 +1,5 @@
 ﻿using BusParkDispatcher.Commands.Base;
+using BusParkDispatcher.Models.Database;
 using BusParkDispatcher.Views;
 using BusParkDispatcher.Views.Windows;
 using System;
@@ -64,6 +65,8 @@ namespace BusParkDispatcher.ViewModels
             set => SetProperty(ref currentView, value);
             get => currentView;
         }
+
+        public static ApplicationContext Database { set; get; } = new ApplicationContext();
         #endregion
 
         #region Constructors

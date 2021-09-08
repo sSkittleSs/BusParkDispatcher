@@ -1,7 +1,10 @@
 ﻿using BusParkDispatcher.Commands.Base;
+using BusParkDispatcher.Infrastructure;
 using BusParkDispatcher.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +15,17 @@ namespace BusParkDispatcher.ViewModels
     class DataBaseViewModel : ObservableObject
     {
         #region Fields
-        private object items;
+        public IEnumerable<object> _items;
         private int selectedItem = 1;
+        private string searchText;
+        private string lastTable;
         #endregion
 
         #region Properties
-        public object Items
+        public IEnumerable<object> Items
         {
-            set => SetProperty(ref items, value);
-            get => items;
+            set => SetProperty(ref _items, value);
+            get => _items;
         }
 
         public int SelectedItem
@@ -28,21 +33,37 @@ namespace BusParkDispatcher.ViewModels
             set => SetProperty(ref selectedItem, value);
             get => selectedItem;
         }
+
+        public string SearchText
+        {
+            set
+            {
+                SetProperty(ref searchText, value);
+
+                if (string.IsNullOrEmpty(value))
+                {
+                    ChangeTable.Execute(lastTable);
+                }
+                else
+                {
+                    Items = Search(SearchText);
+
+                }
+                OnPropertyChanged(nameof(Items));
+            }
+            get => searchText;
+        }
         #endregion
 
         #region Constructors
         public DataBaseViewModel()
         {
-            LoadData.Execute();
+            LoadDb();
+            ChangeTable.Execute("Маршруты");
         }
         #endregion
 
         #region Commands / Methods
-
-        public DelegateCommand LoadData => new DelegateCommand((obj) =>
-        {
-            SelectedItem = 1;
-        });
 
         public DelegateCommand SaveChanges => new DelegateCommand((obj) =>
         {
@@ -50,25 +71,80 @@ namespace BusParkDispatcher.ViewModels
             {
                 if (MessageBox.Show("Вы желаете сохранить изменения?", "Внимание", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    //MainWindowVM.DataBase.SaveChangesAsync().Await(() => NotificationManager.ShowSuccess("Изменения успешно сохранены!"));
+                    SaveDb();
                 }
             }
             catch (Exception e) { NotificationManager.ShowError(e.Message); }
         });
 
+        public DelegateCommand ChangeTable => new DelegateCommand((tableName) =>
+        {
+            SetDataSource(tableName);
+        });
+
         public DelegateCommand Update => new DelegateCommand((obj) =>
         {
-            var switchedGrid = "";
+            LoadDb();
+            ChangeTable?.Execute(lastTable);
+            NotificationManager.ShowSuccess($"Таблица '{lastTable}' успешно обновлена к значениям из БД!");
+        });
 
+        #region Database methods
+        public void LoadDb()
+        {
+            MainWindowViewModel.Database.Автобусы.Load();
+            MainWindowViewModel.Database.Водители.Load();
+            MainWindowViewModel.Database.Время.Load();
+            MainWindowViewModel.Database.Маршруты.Load();
+            MainWindowViewModel.Database.Остановки.Load();
+            MainWindowViewModel.Database.Расписания.Load();
+            MainWindowViewModel.Database.МаршрутыОстановки.Load();
+            MainWindowViewModel.Database.ТипыАвтобусов.Load();
+        }
 
-            switch (SelectedItem)
+        public void SetDataSource(object tableName)
+        {
+            string name = Convert.ToString(tableName);
+            var dbSet = GetPropValue(MainWindowViewModel.Database, name);
+            var local = GetPropValue(dbSet, "Local");
+            
+            Items = (local as IEnumerable<DbTable>);
+            OnPropertyChanged(nameof(Items));
+
+            lastTable = (string)tableName;
+        }
+        public void SaveDb()
+        {
+            try
             {
-                case 1: break;
-                default: NotificationManager.ShowError("Ошибка индекса!"); return;
+                MainWindowViewModel.Database.SaveChanges();
+                NotificationManager.ShowSuccess("Изменения успешно сохранены!");
+            }
+            catch (Exception e) { NotificationManager.ShowError(e.Message); }
+        }
+        public static object GetPropValue(object src, string propName)
+        {
+            return src.GetType().GetProperty(propName).GetValue(src, null);
+        }
+        public static object InvokeMethod(object src, string MethodName)
+        {
+            return src.GetType().GetMethod(MethodName).Invoke(src, null);
+        }
+
+        public IEnumerable<object> Search(string value)
+        {
+            ObservableCollection<object> items = new ObservableCollection<object>();
+            foreach (DbTable row in Items)
+            {
+                if (row.IsSearchable(value))
+                {
+                    items.Add(row);
+                }
             }
 
-            NotificationManager.ShowSuccess($"Таблица '{switchedGrid}' успешно обновлена к значениям из БД!");
-        });
+            return items;
+        }
+        #endregion
         #endregion
     }
 }
