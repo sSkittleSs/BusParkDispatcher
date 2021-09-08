@@ -14,9 +14,9 @@
     <Grid Width="500" Height="130">
         <Border Background="#10000000" CornerRadius="15"/>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <uc:BluredTextButton Style="{StaticResource BluredTextButtonDefault}" Content="Приветствую!" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 5 0 10"/>
-            <uc:BluredTextButton Style="{StaticResource BluredTextButtonDefault}" Content="Для начала работы перейдите в раздел" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
-            <uc:BluredTextButton Style="{StaticResource BluredTextButtonDefault}" Content="''База данных''" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 0 5"/>
+            <uc:BluredTextButton Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Приветствую!" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 5 0 10"/>
+            <uc:BluredTextButton Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Для начала работы перейдите в раздел" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+            <uc:BluredTextButton Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="''База данных'' или ''Отчеты''" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0 0 0 5"/>
         </StackPanel>
     </Grid>
 </UserControl>

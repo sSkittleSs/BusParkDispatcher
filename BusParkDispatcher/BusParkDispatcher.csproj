@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
     </Reference>
@@ -42,7 +48,10 @@
       <HintPath>..\packages\Notifications.Wpf.0.1.1\lib\net461\Notifications.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -149,6 +158,17 @@
     <Compile Include="Images\Icons\Question.xaml.cs">
       <DependentUpon>Question.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\DbTable.cs" />
+    <Compile Include="Models\Database\ApplicationContext.cs" />
+    <Compile Include="Models\Database\sysdiagrams.cs" />
+    <Compile Include="Models\Database\Автобусы.cs" />
+    <Compile Include="Models\Database\Водители.cs" />
+    <Compile Include="Models\Database\Время.cs" />
+    <Compile Include="Models\Database\Маршруты.cs" />
+    <Compile Include="Models\Database\МаршрутыОстановки.cs" />
+    <Compile Include="Models\Database\Остановки.cs" />
+    <Compile Include="Models\Database\Расписания.cs" />
+    <Compile Include="Models\Database\ТипыАвтобусов.cs" />
     <Compile Include="Models\NotificationManager.cs" />
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -191,8 +211,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

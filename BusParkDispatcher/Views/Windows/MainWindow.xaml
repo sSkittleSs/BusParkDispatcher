@@ -65,6 +65,7 @@
             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenMain}" IsChecked="True"/>
                 <RadioButton Content="База данных" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
+                <RadioButton Content="Отчеты" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenReports}"/>
             </StackPanel>
             <!--#endregion-->
 
