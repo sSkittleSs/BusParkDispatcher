@@ -52,9 +52,13 @@
 
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0">
-            <uc:CornerTextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" WatermarkText="Поиск..."/>
+            <uc:CornerTextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" WatermarkText="Поиск..." Margin="10 0"/>
             <Button Content="Сохранить изменения" Style="{StaticResource ButtonDefault}" Command="{Binding SaveChanges}" Width="250" Margin="10 0"/>
-            <Button Content="Обновить данные таблицы" Style="{StaticResource ButtonDefault}" Command="{Binding Update}" Width="250" Margin="10 0"/>
+            <Button Content="Отменить все изменения" Style="{StaticResource ButtonDefault}" Command="{Binding Update}" Width="250" Margin="10 0">
+                <Button.ToolTip>
+                    <ToolTip Content="Отменяет все последние внесенные изменения в базу данных до последнего сохранения"/>
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>
