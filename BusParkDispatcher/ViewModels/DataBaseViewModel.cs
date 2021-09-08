@@ -38,18 +38,22 @@ namespace BusParkDispatcher.ViewModels
         {
             set
             {
-                SetProperty(ref searchText, value);
 
                 if (string.IsNullOrEmpty(value))
                 {
                     ChangeTable.Execute(lastTable);
                 }
+                else if (SearchText?.Length > value.Length)
+                {
+                    ChangeTable.Execute(lastTable);
+                    Items = Search(value);
+                }
                 else
                 {
-                    Items = Search(SearchText);
-
+                    Items = Search(value);
                 }
-                OnPropertyChanged(nameof(Items));
+
+                SetProperty(ref searchText, value);
             }
             get => searchText;
         }
@@ -84,7 +88,7 @@ namespace BusParkDispatcher.ViewModels
 
         public DelegateCommand Update => new DelegateCommand((obj) =>
         {
-            LoadDb();
+            MainWindowViewModel.Database.UndoChanges();
             ChangeTable?.Execute(lastTable);
             NotificationManager.ShowSuccess($"Таблица '{lastTable}' успешно обновлена к значениям из БД!");
         });
@@ -109,7 +113,6 @@ namespace BusParkDispatcher.ViewModels
             var local = GetPropValue(dbSet, "Local");
             
             Items = (local as IEnumerable<DbTable>);
-            OnPropertyChanged(nameof(Items));
 
             lastTable = (string)tableName;
         }
