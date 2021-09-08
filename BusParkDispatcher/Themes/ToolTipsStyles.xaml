@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:BusParkDispatcher.Themes">
+    <Style x:Key="ToolTipDefault" TargetType="ToolTip">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <Border Background="#FFFAFAFA" BorderThickness="1" BorderBrush="Blue" CornerRadius="5">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Margin="5" VerticalAlignment="Center" Text="Подсказка" FontWeight="Bold"/>
+                            <Rectangle Margin="5" Fill="Black" VerticalAlignment="Stretch" Width="1"/>
+                            <TextBlock Margin="5" Text="{TemplateBinding Property=Content}" MaxWidth="400" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ToolTip" BasedOn="{StaticResource ToolTipDefault}"/>
+</ResourceDictionary>

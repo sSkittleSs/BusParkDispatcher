@@ -122,6 +122,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\ToolTipsStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DataBaseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +175,7 @@
       <DependentUpon>Question.xaml</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DbTable.cs" />
+    <Compile Include="Infrastructure\Extensions.cs" />
     <Compile Include="Models\Database\ApplicationContext.cs" />
     <Compile Include="Models\Database\sysdiagrams.cs" />
     <Compile Include="Models\Database\Автобусы.cs" />
