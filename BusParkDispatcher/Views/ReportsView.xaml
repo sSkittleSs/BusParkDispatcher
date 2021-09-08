@@ -21,7 +21,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Background="#10000000" CornerRadius="20"/>
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Style="{StaticResource ViewBorderStyle}"/>
 
         <uc:BluredTextButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Мастер создания отчетов" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
 
@@ -33,7 +33,7 @@
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport1}"/>
             </Grid.InputBindings>
-            <Border Grid.Row="0" Grid.RowSpan="2" Background="#100000FF" CornerRadius="20"/>
+            <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
             <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Отчет 1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         </Grid>
@@ -45,7 +45,7 @@
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport2}"/>
             </Grid.InputBindings>
-            <Border Grid.Row="0" Grid.RowSpan="2" Background="#100000FF" CornerRadius="20"/>
+            <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
             <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Отчет 2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         </Grid>
@@ -57,7 +57,7 @@
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport3}"/>
             </Grid.InputBindings>
-            <Border Grid.Row="0" Grid.RowSpan="2" Background="#100000FF" CornerRadius="20"/>
+            <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
             <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Отчет 3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         </Grid>
@@ -69,7 +69,7 @@
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport4}"/>
             </Grid.InputBindings>
-            <Border Grid.Row="0" Grid.RowSpan="2" Background="#100000FF" CornerRadius="20"/>
+            <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
             <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="Отчет 4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         </Grid>
