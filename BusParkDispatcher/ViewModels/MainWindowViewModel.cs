@@ -88,6 +88,11 @@ namespace BusParkDispatcher.ViewModels
         {
             ChangeView(new DataBaseView());
         });
+
+        public DelegateCommand OpenReports => new DelegateCommand((obj) =>
+        {
+            ChangeView(new ReportsView());
+        });
         #endregion
     }
 }
