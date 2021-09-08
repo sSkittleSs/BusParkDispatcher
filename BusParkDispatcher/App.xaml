@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="/Themes/IconButtonsStyles.xaml" />
                 <ResourceDictionary Source="/Themes/RadioButtonsStyles.xaml" />
                 <ResourceDictionary Source="/Themes/DataGridViewsStyles.xaml" />
+                <ResourceDictionary Source="/Themes/GridsStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
