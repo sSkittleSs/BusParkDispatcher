@@ -4,6 +4,7 @@ using BusParkDispatcher.Views;
 using BusParkDispatcher.Views.Windows;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace BusParkDispatcher.ViewModels
         private static int maxControlWidth = 796;
         private static int maxControlHeight = 380;
         private UserControl currentView;
+        private List<CultureInfo> languages;
+        private CultureInfo selectedLanguage;
         #endregion
 
         #region Properties
@@ -66,12 +69,30 @@ namespace BusParkDispatcher.ViewModels
             get => currentView;
         }
 
+        public List<CultureInfo> Languages
+        {
+            set => SetProperty(ref languages, value);
+            get => languages;
+        }
+
+        public CultureInfo SelectedLanguage
+        {
+            set
+            {
+                SetProperty(ref selectedLanguage, value);
+
+                App.Language = SelectedLanguage;
+            }
+            get => selectedLanguage;
+        }
+
         public static ApplicationContext Database { set; get; } = new ApplicationContext();
         #endregion
 
         #region Constructors
         public MainWindowViewModel()
         {
+            Languages = App.Languages;
             OpenMain?.Execute();
         }
         #endregion

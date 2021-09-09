@@ -67,6 +67,8 @@
                 <RadioButton Content="База данных" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
                 <RadioButton Content="Отчеты" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenReports}"/>
             </StackPanel>
+
+            <ListBox Grid.Row="0" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0"/>
             <!--#endregion-->
 
             <!--#region Тестовые элементы-->
