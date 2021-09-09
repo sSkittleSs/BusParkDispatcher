@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:BusParkDispatcher.Themes">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="ViewBorderStyle" TargetType="Border">
         <Setter Property="Background" Value="#10000000"/>
         <Setter Property="CornerRadius" Value="15"/>
