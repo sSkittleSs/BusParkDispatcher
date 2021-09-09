@@ -93,6 +93,8 @@ namespace BusParkDispatcher.ViewModels
         public MainWindowViewModel()
         {
             Languages = App.Languages;
+            App.Language = BusParkDispatcher.Properties.Settings.Default.DefaultLanguage;
+            SelectedLanguage = App.Language;
             OpenMain?.Execute();
         }
         #endregion

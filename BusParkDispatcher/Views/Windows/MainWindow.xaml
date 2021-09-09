@@ -43,7 +43,7 @@
                 <MouseBinding MouseAction="LeftClick" Command="{StaticResource DragWindowCommand}"/>
             </Grid.InputBindings>
             <Border BorderBrush="#FF535353" Background="#FFC4C4C4" BorderThickness="0 0 0 1" Grid.ColumnSpan="2"/>
-            <TextBlock Text="Диспетчерская автобусного парка №3" Padding="5" Foreground="Black" FontWeight="DemiBold" FontSize="12" VerticalAlignment="Center"/>
+            <TextBlock Text="{DynamicResource ProjectTitle}" Padding="5" Foreground="Black" FontWeight="DemiBold" FontSize="12" VerticalAlignment="Center"/>
 
             <!-- Control buttons -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -63,34 +63,12 @@
             <!--#region Menu-->
             <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFFFF4F4" BorderThickness="0 0 0 1"/>
             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                <RadioButton Content="Главная" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenMain}" IsChecked="True"/>
-                <RadioButton Content="База данных" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
-                <RadioButton Content="Отчеты" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenReports}"/>
+                <RadioButton Content="{DynamicResource MainRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenMain}" IsChecked="True"/>
+                <RadioButton Content="{DynamicResource DatabaseRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
+                <RadioButton Content="{DynamicResource ReportsRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenReports}"/>
             </StackPanel>
 
-            <ListBox Grid.Row="0" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0"/>
-            <!--#endregion-->
-
-            <!--#region Тестовые элементы-->
-            <!--<GroupBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Header="Тестовые элементы">
-                <StackPanel Orientation="Vertical">
-                    <controls:CornerTextBox Text="" WatermarkText="Введите пароль (тест)" Style="{StaticResource CornerTextBox}" Margin="0 10"/>
-                    <controls:CornerTextBox Text="" WatermarkText="Фио" Style="{StaticResource CornerBorderDownTextBox}" Margin="0 10"/>
-                    <PasswordBox Password="123" Style="{StaticResource PasswordBox}" Margin="0 10"/>
-                    <Button Content="Войти" Style="{StaticResource Button}" Margin="0 10"/>
-                    <controls:BluredTextButton Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Забыли пароль?" Style="{StaticResource BluredTextButton}"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
-                        <controls:IconButton Style="{StaticResource AddButton}" Width="25" Margin="5 0"/>
-                        <controls:IconButton Style="{StaticResource EditButton}" Width="25" Margin="5 0"/>
-                        <controls:IconButton Style="{StaticResource ExitButton}" Width="25" Margin="5 0"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
-                        <controls:IconButton Style="{StaticResource LogoutButton}" Width="25" Margin="5 0" Visibility="Visible"/>
-                        <controls:IconButton Style="{StaticResource MinimizeButton}" Width="25" Margin="5 0"/>
-                        <controls:IconButton Style="{StaticResource QuestionButton}" Width="25" Margin="5 0"/>
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>-->
+            <ComboBox Grid.Row="0" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Style="{StaticResource ComboBox}" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0"/>
             <!--#endregion-->
 
             <UserControl Grid.Row="1" Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxWidth="{Binding MaxControlWidth}" MaxHeight="{Binding MaxControlHeight}"/>

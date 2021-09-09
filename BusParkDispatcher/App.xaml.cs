@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusParkDispatcher.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -85,15 +86,9 @@ namespace BusParkDispatcher
 
 			LanguageChanged += App_LanguageChanged;
 		}
-
 		#endregion
 
 		#region Methods
-		private void Application_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
-		{
-			Language = BusParkDispatcher.Properties.Settings.Default.DefaultLanguage;
-		}
-
 		private void App_LanguageChanged(Object sender, EventArgs e)
 		{
 			BusParkDispatcher.Properties.Settings.Default.DefaultLanguage = Language;

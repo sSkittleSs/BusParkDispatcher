@@ -52,8 +52,8 @@
 
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0">
-            <uc:CornerTextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" WatermarkText="Поиск..." Margin="10 0"/>
-            <Button Content="Сохранить изменения" Style="{StaticResource ButtonDefault}" Command="{Binding SaveChanges}" Width="250" Margin="10 0"/>
+            <uc:CornerTextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" WatermarkText="{DynamicResource SearchTextBoxText}" Margin="10 0"/>
+            <Button Content="{DynamicResource SaveChangesButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding SaveChanges}" Width="250" Margin="10 0"/>
             <Button Content="{DynamicResource UndoButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Update}" Width="250" Margin="10 0">
                 <Button.ToolTip>
                     <ToolTip Content="Отменяет все последние внесенные изменения в базу данных до последнего сохранения"/>

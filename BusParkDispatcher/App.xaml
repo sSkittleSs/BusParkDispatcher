@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:BusParkDispatcher"
              xmlns:cmd="clr-namespace:BusParkDispatcher.Commands"
-             StartupUri="/Views/Windows/MainWindow.xaml"
-             LoadCompleted="Application_LoadCompleted">
+             StartupUri="/Views/Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,6 +15,7 @@
                 <ResourceDictionary Source="/Themes/GridsStyles.xaml" />
                 <ResourceDictionary Source="/Themes/BordersStyles.xaml" />
                 <ResourceDictionary Source="/Themes/ToolTipsStyles.xaml" />
+                <ResourceDictionary Source="/Themes/ComboBoxesStyles.xaml" />
                 <ResourceDictionary Source="/Languages/lang.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
