@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BusParkDispatcher.Views"
              xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels" xmlns:uc="clr-namespace:BusParkDispatcher.Controls"
-             mc:Ignorable="d" MinHeight="370" MinWidth="796" d:DesignHeight="370" d:DesignWidth="796">
+             mc:Ignorable="d" Height="370" Width="796" d:DesignHeight="370" d:DesignWidth="796">
     <UserControl.DataContext>
         <vm:ReportsViewModel />
     </UserControl.DataContext>
@@ -28,50 +28,50 @@
         <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport1}"/>
             </Grid.InputBindings>
             <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
-            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report1TextBlockText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report1TextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport2}"/>
             </Grid.InputBindings>
             <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
-            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report2TextBlockText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report2TextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport3}"/>
             </Grid.InputBindings>
             <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
-            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report3TextBlockText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report3TextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport4}"/>
             </Grid.InputBindings>
             <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5"/>
-            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report4TextBlockText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report4TextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
     </Grid>
 </UserControl>

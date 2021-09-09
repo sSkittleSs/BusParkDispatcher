@@ -20,6 +20,10 @@
     <mscorlib:String x:Key="UndoButtonText">Undo all changes</mscorlib:String>
     <mscorlib:String x:Key="SaveChangesButtonText">Save changes</mscorlib:String>
     <mscorlib:String x:Key="SearchTextBoxText">Search...</mscorlib:String>
+
+    <!--#region ToolTips-->
+    <mscorlib:String x:Key="ToolTipUndoButtonText">Undoes all the last changes made to the database until the last save.</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region ReportsView-->
@@ -28,6 +32,10 @@
     <mscorlib:String x:Key="Report2TextBlockText">Report 2</mscorlib:String>
     <mscorlib:String x:Key="Report3TextBlockText">Report 3</mscorlib:String>
     <mscorlib:String x:Key="Report4TextBlockText">Report 4</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region ToolTipsStyles-->
+    <mscorlib:String x:Key="ToolTipPromptText">Prompt</mscorlib:String>
     <!--#endregion-->
 
 </ResourceDictionary>
