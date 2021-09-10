@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:BusParkDispatcher.Languages"
+                    xmlns:mscorlib="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region MainWindow-->
+    <mscorlib:String x:Key="ProjectTitle">Диспетчерская автобусного парка №3</mscorlib:String>
+    <mscorlib:String x:Key="MainRadioButtonText">Main</mscorlib:String>
+    <mscorlib:String x:Key="DatabaseRadioButtonText">Database</mscorlib:String>
+    <mscorlib:String x:Key="ReportsRadioButtonText">Reports</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region MainView-->
+    <mscorlib:String x:Key="HelloTextBlockText">Hello!</mscorlib:String>
+    <mscorlib:String x:Key="ForWorkTextBlockText">For work click on the</mscorlib:String>
+    <mscorlib:String x:Key="MenuItemTextBlockText">''Database'' or ''Reports''</mscorlib:String>
+    <!--#endregion-->
+    
+    <!--#region DatabaseView-->
+    <mscorlib:String x:Key="UndoButtonText">Undo all changes</mscorlib:String>
+    <mscorlib:String x:Key="SaveChangesButtonText">Save changes</mscorlib:String>
+    <mscorlib:String x:Key="SearchTextBoxText">Search...</mscorlib:String>
+
+    <!--#region ToolTips-->
+    <mscorlib:String x:Key="ToolTipUndoButtonText">Undoes all the last changes made to the database until the last save.</mscorlib:String>
+    <!--#endregion-->
+    <!--#endregion-->
+
+    <!--#region ReportsView-->
+    <mscorlib:String x:Key="ReportBuilderMasterTitleTextBlockText">Report builder master</mscorlib:String>
+    <mscorlib:String x:Key="Report1TextBlockText">Report 1</mscorlib:String>
+    <mscorlib:String x:Key="Report2TextBlockText">Report 2</mscorlib:String>
+    <mscorlib:String x:Key="Report3TextBlockText">Report 3</mscorlib:String>
+    <mscorlib:String x:Key="Report4TextBlockText">Report 4</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region ToolTipsStyles-->
+    <mscorlib:String x:Key="ToolTipPromptText">Prompt</mscorlib:String>
+    <!--#endregion-->
+
+</ResourceDictionary>

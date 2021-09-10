@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:BusParkDispatcher.Languages"
+                    xmlns:mscorlib="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region MainWindow-->
+    <mscorlib:String x:Key="ProjectTitle">Диспетчерская автобусного парка №3</mscorlib:String>
+    <mscorlib:String x:Key="MainRadioButtonText">Главная</mscorlib:String>
+    <mscorlib:String x:Key="DatabaseRadioButtonText">База данных</mscorlib:String>
+    <mscorlib:String x:Key="ReportsRadioButtonText">Отчеты</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region MainView-->
+    <mscorlib:String x:Key="HelloTextBlockText">Приветствую!</mscorlib:String>
+    <mscorlib:String x:Key="ForWorkTextBlockText">Для начала работы перейдите в раздел</mscorlib:String>
+    <mscorlib:String x:Key="MenuItemTextBlockText">''База данных'' или ''Отчеты''</mscorlib:String>
+    <!--#endregion-->
+    
+    <!--#region DatabaseView-->
+    <mscorlib:String x:Key="UndoButtonText">Отменить все изменения</mscorlib:String>
+    <mscorlib:String x:Key="SaveChangesButtonText">Сохранить изменения</mscorlib:String>
+    <mscorlib:String x:Key="SearchTextBoxText">Поиск...</mscorlib:String>
+    
+    <!--#region ToolTips-->
+    <mscorlib:String x:Key="ToolTipUndoButtonText">Отменяет все последние внесенные изменения в базу данных до последнего сохранения</mscorlib:String>
+    <!--#endregion-->
+    <!--#endregion-->
+
+    <!--#region ReportsView-->
+    <mscorlib:String x:Key="ReportBuilderMasterTitleTextBlockText">Мастер создания отчетов</mscorlib:String>
+    <mscorlib:String x:Key="Report1TextBlockText">Отчет 1</mscorlib:String>
+    <mscorlib:String x:Key="Report2TextBlockText">Отчет 2</mscorlib:String>
+    <mscorlib:String x:Key="Report3TextBlockText">Отчет 3</mscorlib:String>
+    <mscorlib:String x:Key="Report4TextBlockText">Отчет 4</mscorlib:String>
+    <!--#endregion-->
+    
+    <!--#region ToolTipsStyles-->
+    <mscorlib:String x:Key="ToolTipPromptText">Подсказка</mscorlib:String>
+    <!--#endregion-->
+    
+</ResourceDictionary>

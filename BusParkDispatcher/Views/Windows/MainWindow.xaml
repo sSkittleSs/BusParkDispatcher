@@ -4,9 +4,76 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusParkDispatcher.Views.Windows"
+        xmlns:controls="clr-namespace:BusParkDispatcher.Controls"
+        xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels"
+        xmlns:cmd="clr-namespace:BusParkDispatcher.Commands"
+        xmlns:notify="clr-namespace:Notifications.Wpf.Controls;assembly=Notifications.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" 
+        Height="{Binding WindowHeight, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="{Binding WindowWidth, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+        AllowsTransparency="True" 
+        WindowStyle="None" 
+        Background="Transparent" 
+        WindowStartupLocation="CenterScreen" 
+        MinHeight="{Binding MinHeight}" MinWidth="{Binding MinWidth}">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <cmd:CloseApplicationCommand x:Key="CloseApplicationCommand"/>
+        <cmd:MinimizeApplicationCommand x:Key="MinimizeApplicationCommand"/>
+        <cmd:OpenHelpCommand x:Key="OpenHelpCommand"/>
+        <cmd:DragWindowCommand x:Key="DragWindowCommand"/>
+    </Window.Resources>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" GlassFrameThickness="0" CornerRadius="0" />
+    </WindowChrome.WindowChrome>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFF0F0F0" BorderThickness="1.5" Grid.RowSpan="2" CornerRadius="2"/>
+
+        <!--UpperPanel-->
+        <Grid Grid.Row="0" Margin="3 3 3 0">
+            <Grid.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{StaticResource DragWindowCommand}"/>
+            </Grid.InputBindings>
+            <Border BorderBrush="#FF535353" Background="#FFC4C4C4" BorderThickness="0 0 0 1" Grid.ColumnSpan="2"/>
+            <TextBlock Text="{DynamicResource ProjectTitle}" Padding="5" Foreground="Black" FontWeight="DemiBold" FontSize="12" VerticalAlignment="Center"/>
+
+            <!-- Control buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <controls:IconButton Height="23" Margin="3 4" Style="{StaticResource QuestionButton}" Command="{StaticResource OpenHelpCommand}"/>
+                <controls:IconButton Height="23" Margin="3 4" Style="{StaticResource MinimizeButton}" Command="{StaticResource MinimizeApplicationCommand}"/>
+                <controls:IconButton Height="23" Margin="3 4 6 4" Style="{StaticResource ExitButton}" Command="{StaticResource CloseApplicationCommand}"/>
+            </StackPanel>
+        </Grid>
+
+        <!--MiddlePanel (Content)-->
+        <Grid Grid.Row="1" Margin="3 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--#region Menu-->
+            <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFFFF4F4" BorderThickness="0 0 0 1"/>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <RadioButton Content="{DynamicResource MainRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenMain}" IsChecked="True"/>
+                <RadioButton Content="{DynamicResource DatabaseRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
+                <RadioButton Content="{DynamicResource ReportsRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenReports}"/>
+            </StackPanel>
+
+            <ComboBox Grid.Row="0" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Style="{StaticResource ComboBox}" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0"/>
+            <!--#endregion-->
+
+            <UserControl Grid.Row="1" Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxWidth="{Binding MaxControlWidth}" MaxHeight="{Binding MaxControlHeight}"/>
+        </Grid>
+
+        <notify:NotificationArea Grid.Row="1" x:Name="WindowArea" Position="BottomRight" MaxItems="3"/>
     </Grid>
 </Window>
