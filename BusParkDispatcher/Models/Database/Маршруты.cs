@@ -13,7 +13,6 @@ namespace BusParkDispatcher.Models.Database
         public Маршруты()
         {
             Автобусы = new HashSet<Автобусы>();
-            МаршрутыОстановки = new HashSet<МаршрутыОстановки>();
         }
 
         public int НомерМаршрута { get; set; }
@@ -30,9 +29,7 @@ namespace BusParkDispatcher.Models.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Автобусы> Автобусы { get; set; }
 
+        [ForeignKey("КодРасписания")]
         public virtual Расписания Расписания { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<МаршрутыОстановки> МаршрутыОстановки { get; set; }
     }
 }

@@ -28,8 +28,10 @@ namespace BusParkDispatcher.Models.Database
         [Key]
         public int КодАвтобуса { get; set; }
 
+        [ForeignKey("КодМаршрута")]
         public virtual Маршруты Маршруты { get; set; }
 
+        [ForeignKey("КодТипа")]
         public virtual ТипыАвтобусов ТипыАвтобусов { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
