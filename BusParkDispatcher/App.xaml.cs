@@ -38,13 +38,13 @@ namespace BusParkDispatcher
 			}
 			set
 			{
-				if (value == null) throw new ArgumentNullException("value");
+				if (value == null) throw new ArgumentNullException(nameof(value));
 				if (value == System.Threading.Thread.CurrentThread.CurrentUICulture) return;
 
-				//1. Меняем язык приложения:
+				// Меняем язык приложения:
 				System.Threading.Thread.CurrentThread.CurrentUICulture = value;
 
-				//2. Создаём ResourceDictionary для новой культуры
+				// Создаём ResourceDictionary для новой культуры
 				ResourceDictionary dict = new ResourceDictionary();
 				switch (value.Name)
 				{
@@ -56,7 +56,7 @@ namespace BusParkDispatcher
 						break;
 				}
 
-				//3. Находим старую ResourceDictionary и удаляем его и добавляем новую ResourceDictionary
+				// Находим старую ResourceDictionary и удаляем его и добавляем новую ResourceDictionary
 				ResourceDictionary oldDict = (from d in Current.Resources.MergedDictionaries
 											  where d.Source != null && d.Source.OriginalString.StartsWith("/Languages/lang.")
 											  select d).First();
@@ -71,7 +71,7 @@ namespace BusParkDispatcher
 					Current.Resources.MergedDictionaries.Add(dict);
 				}
 
-				//4. Вызываем евент для оповещения всех окон.
+				// Вызываем ивент для оповещения всех окон.
 				LanguageChanged?.Invoke(Current, new EventArgs());
 			}
 		}
