@@ -28,7 +28,7 @@
 
     <!--#region ReportsView-->
     <mscorlib:String x:Key="ReportBuilderMasterTitleTextBlockText">Report builder master</mscorlib:String>
-    <mscorlib:String x:Key="Report1TextBlockText">Report 1</mscorlib:String>
+    <mscorlib:String x:Key="ReportTimetableTextBlockText">Timetable report</mscorlib:String>
     <mscorlib:String x:Key="Report2TextBlockText">Report 2</mscorlib:String>
     <mscorlib:String x:Key="Report3TextBlockText">Report 3</mscorlib:String>
     <mscorlib:String x:Key="Report4TextBlockText">Report 4</mscorlib:String>

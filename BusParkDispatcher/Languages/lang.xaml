@@ -28,7 +28,7 @@
 
     <!--#region ReportsView-->
     <mscorlib:String x:Key="ReportBuilderMasterTitleTextBlockText">Мастер создания отчетов</mscorlib:String>
-    <mscorlib:String x:Key="Report1TextBlockText">Отчет 1</mscorlib:String>
+    <mscorlib:String x:Key="ReportTimetableTextBlockText">Расписание</mscorlib:String>
     <mscorlib:String x:Key="Report2TextBlockText">Отчет 2</mscorlib:String>
     <mscorlib:String x:Key="Report3TextBlockText">Отчет 3</mscorlib:String>
     <mscorlib:String x:Key="Report4TextBlockText">Отчет 4</mscorlib:String>
