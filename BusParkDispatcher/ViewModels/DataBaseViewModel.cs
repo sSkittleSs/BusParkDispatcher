@@ -102,7 +102,7 @@ namespace BusParkDispatcher.ViewModels
             MainWindowViewModel.Database.Маршруты.Load();
             MainWindowViewModel.Database.Остановки.Load();
             MainWindowViewModel.Database.Расписания.Load();
-            MainWindowViewModel.Database.МаршрутыОстановки.Load();
+            MainWindowViewModel.Database.ВремяРасписанияОстановки.Load();
             MainWindowViewModel.Database.ТипыАвтобусов.Load();
         }
 

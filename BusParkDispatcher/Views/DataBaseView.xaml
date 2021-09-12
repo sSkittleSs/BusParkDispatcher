@@ -37,7 +37,7 @@
             <RadioButton Grid.Row="1" Grid.Column="1" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="Расписания" Content="Расписания" Style="{StaticResource RadioButtonMenuStyle}" />
             <RadioButton Grid.Row="0" Grid.Column="2" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="Автобусы" Content="Автобусы" Style="{StaticResource RadioButtonMenuStyle}" />
             <!--<RadioButton Grid.Row="0" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="" Content="Автобусы-водители" Style="{StaticResource RadioButtonMenuStyle}" />-->
-            <RadioButton Grid.Row="1" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="МаршрутыОстановки" Content="Маршруты-остановки" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="1" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="ВремяРасписанияОстановки" Content="ВремяРасписание" Style="{StaticResource RadioButtonMenuStyle}" />
             <!--<RadioButton Grid.Row="0" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="" Content="Время-расписание" Style="{StaticResource RadioButtonMenuStyle}" />-->
             <RadioButton Grid.Row="1" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="ТипыАвтобусов" Content="Типы автобусов" Style="{StaticResource RadioButtonMenuStyle}" />
         </Grid>
