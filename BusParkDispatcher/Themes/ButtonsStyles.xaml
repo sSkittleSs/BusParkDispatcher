@@ -5,14 +5,16 @@
     <Style x:Key="BluredTextButtonDefault" TargetType="uc:BluredTextButton">
         <Setter Property="BlurVisibility" Value="Hidden"/>
         <Setter Property="Foreground" Value="#FF00ADFF"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="BluredForeground" Value="#FF1FA6E7"/>
         <Setter Property="Cursor" Value="Arrow"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="uc:BluredTextButton">
                     <Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" Margin="{TemplateBinding Margin}" Visibility="{TemplateBinding Visibility}">
-                        <TextBlock Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}"/>
-                        <TextBlock Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding BluredForeground}" Visibility="{TemplateBinding BlurVisibility}">
+                        <TextBlock Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Foreground="{TemplateBinding Foreground}" TextWrapping="Wrap"/>
+                        <TextBlock Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Foreground="{TemplateBinding BluredForeground}" TextWrapping="Wrap" Visibility="{TemplateBinding BlurVisibility}">
                             <TextBlock.Effect>
                                 <BlurEffect Radius="4" KernelType="Gaussian"/>
                             </TextBlock.Effect>
