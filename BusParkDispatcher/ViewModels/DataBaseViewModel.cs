@@ -1,6 +1,7 @@
 ﻿using BusParkDispatcher.Commands.Base;
 using BusParkDispatcher.Infrastructure;
 using BusParkDispatcher.Models;
+using BusParkDispatcher.Models.Database;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -111,11 +112,12 @@ namespace BusParkDispatcher.ViewModels
             string name = Convert.ToString(tableName);
             var dbSet = GetPropValue(MainWindowViewModel.Database, name);
             var local = GetPropValue(dbSet, "Local");
-            
-            Items = (local as IEnumerable<DbTable>);
+
+            Items = SelectData(local);
 
             lastTable = (string)tableName;
         }
+
         public void SaveDb()
         {
             try
@@ -125,10 +127,12 @@ namespace BusParkDispatcher.ViewModels
             }
             catch (Exception e) { NotificationManager.ShowError(e.Message); }
         }
+
         public static object GetPropValue(object src, string propName)
         {
             return src.GetType().GetProperty(propName).GetValue(src, null);
         }
+
         public static object InvokeMethod(object src, string MethodName)
         {
             return src.GetType().GetMethod(MethodName).Invoke(src, null);
@@ -146,6 +150,17 @@ namespace BusParkDispatcher.ViewModels
             }
 
             return items;
+        }
+
+        public IEnumerable<object> SelectData(object src)
+        {
+            if (src is ObservableCollection<Маршруты> routes)
+                return from r in routes select new { r.КодМаршрута, r.НомерМаршрута, r.Описание, r.КодРасписания };
+
+            if (src is ObservableCollection<Расписания> timetables)
+                return from t in timetables select new { t.КодРасписания, t.Дата, t.ЯвляетсяВыходным };
+
+            return (src as IEnumerable<DbTable>);
         }
         #endregion
         #endregion

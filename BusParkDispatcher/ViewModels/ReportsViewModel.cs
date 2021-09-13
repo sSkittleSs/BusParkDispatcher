@@ -35,6 +35,22 @@ namespace BusParkDispatcher.ViewModels
 
             timetableReport.WriteToNewExcelFile("D:\\\\test.xlsx");
         });
+
+        public DelegateCommand CreateBusesOnTheRoutesReport => new DelegateCommand((obj) =>
+        {
+            var автобусыНаМаршрутах = new List<BusesOnTheRoute>();
+            автобусыНаМаршрутах.Add(new BusesOnTheRoute(1, 22));
+
+            автобусыНаМаршрутах.Add(new BusesOnTheRoute(159, 8));
+
+            автобусыНаМаршрутах.Add(new BusesOnTheRoute(42, 6));
+
+            автобусыНаМаршрутах.Add(new BusesOnTheRoute(36, 2));
+
+            var timetableReport = new BusesOnTheRouteReport(автобусыНаМаршрутах);
+
+            timetableReport.WriteToNewExcelFile("D:\\\\test4.xlsx");
+        });
         #endregion
     }
 }
