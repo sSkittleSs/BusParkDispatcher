@@ -1,4 +1,5 @@
-﻿using BusParkDispatcher.ViewModels;
+﻿using BusParkDispatcher.Infrastructure;
+using BusParkDispatcher.ViewModels;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
@@ -10,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace BusParkDispatcher.Models
 {
-    class TimetableReport
+    class TimetableReport : IExcelReportGeneratable
     {
+        #region Properties
         public int НомерМаршрута { get; set; }
 
         public DateTime Дата { get; set; }
@@ -19,7 +21,9 @@ namespace BusParkDispatcher.Models
         public bool ЯвляетсяВыходным { get; set; }
 
         public ICollection<BusStopTime> Расписание { set; get; }
+        #endregion
 
+        #region Constructors
         public TimetableReport(int номерМаршрута)
         {
             НомерМаршрута = номерМаршрута;
@@ -45,8 +49,10 @@ namespace BusParkDispatcher.Models
             ЯвляетсяВыходным = являетсяВыходным;
             Расписание = расписание;
         }
+        #endregion
 
-        private byte[] GenerateReportToNewExcelFile()
+        #region Methods
+        protected byte[] GenerateReportToNewExcelFile()
         {
             var package = AddNewSheet(new ExcelPackage());
 
@@ -79,8 +85,8 @@ namespace BusParkDispatcher.Models
             sheet.Cells["B2"].Value = $"Дата:";
             sheet.Cells["B3"].Value = $"Является выходным днем:";
 
-
             sheet.Cells["C1:C3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+            sheet.Cells["C2"].Style.Numberformat.Format = "dd.mm.yyyy";
 
             sheet.Cells["C1"].Value = НомерМаршрута;
             sheet.Cells["C2"].Value = Дата;
@@ -92,7 +98,7 @@ namespace BusParkDispatcher.Models
             var column = 2;
 
             sheet.Cells[currentRow, column, currentRow + Расписание.Count, column].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-            sheet.Cells[currentRow, column, currentRow + Расписание.Count, column].Style.Font.Bold = true;
+            sheet.Cells[currentRow, column, currentRow, column + 2].Style.Font.Bold = true;
             sheet.Cells[currentRow, column + 1, currentRow + Расписание.Count, column + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
             sheet.Cells[currentRow, column, currentRow + Расписание.Count, column + 2].Style.Border.BorderAround(ExcelBorderStyle.Double);
             sheet.Cells[currentRow, column, currentRow, column + 2].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
@@ -111,10 +117,11 @@ namespace BusParkDispatcher.Models
                 currentRow++;
             }
 
-            sheet.Cells[2, column, currentRow, column + 2].AutoFitColumns();
+            sheet.Cells[firstTableRow, column, currentRow, column + 1].AutoFitColumns();
             sheet.Cells[firstTableRow, column, currentRow, column].Style.Numberformat.Format = "hh:mm";
 
             return package;
         }
+        #endregion
     }
 }
