@@ -20,9 +20,11 @@
     <mscorlib:String x:Key="UndoButtonText">Undo all changes</mscorlib:String>
     <mscorlib:String x:Key="SaveChangesButtonText">Save changes</mscorlib:String>
     <mscorlib:String x:Key="SearchTextBoxText">Search...</mscorlib:String>
-
+    <mscorlib:String x:Key="AddItemButtonText">Add</mscorlib:String>
+    
     <!--#region ToolTips-->
     <mscorlib:String x:Key="ToolTipUndoButtonText">Undoes all the last changes made to the database until the last save.</mscorlib:String>
+    <mscorlib:String x:Key="ToolTipAddItemButtonText">Opens a new window for adding a new item to the database.</mscorlib:String>
     <!--#endregion-->
     <!--#endregion-->
 
@@ -31,7 +33,7 @@
     <mscorlib:String x:Key="ReportTimetableTextBlockText">Timetable report</mscorlib:String>
     <mscorlib:String x:Key="Report2TextBlockText">Report 2</mscorlib:String>
     <mscorlib:String x:Key="Report3TextBlockText">Report 3</mscorlib:String>
-    <mscorlib:String x:Key="Report4TextBlockText">Report 4</mscorlib:String>
+    <mscorlib:String x:Key="ReportBusesOnTheRoutesTextBlockText">Buses on the routes</mscorlib:String>
     <!--#endregion-->
 
     <!--#region ToolTipsStyles-->
