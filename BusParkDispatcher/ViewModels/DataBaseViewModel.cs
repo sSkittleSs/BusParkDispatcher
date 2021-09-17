@@ -2,6 +2,8 @@
 using BusParkDispatcher.Infrastructure;
 using BusParkDispatcher.Models;
 using BusParkDispatcher.Models.Database;
+using BusParkDispatcher.Views;
+using BusParkDispatcher.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -87,6 +89,21 @@ namespace BusParkDispatcher.ViewModels
         public DelegateCommand ChangeTable => new DelegateCommand((tableName) =>
         {
             SetDataSource(tableName);
+        });
+
+        public DelegateCommand Add => new DelegateCommand((obj) =>
+        {
+            switch(lastTable)
+            {
+                case "Автобусы":
+                    if (new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusesAdditionView(), WindowTitle = "Добавление автобуса" } }.ShowDialog() ?? false)
+                        NotificationManager.ShowSuccess("Новая запись успешно добавлена.\nНе забудьте сохранить изменения.");
+                    else
+                        NotificationManager.ShowError("Запись не была добавлена.");
+                    break;
+                default:
+                    break;
+            }
         });
 
         public DelegateCommand Update => new DelegateCommand((obj) =>

@@ -170,6 +170,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BusesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DataBaseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -240,10 +244,14 @@
     <Compile Include="Models\NotificationManager.cs" />
     <Compile Include="Models\TimetableReport.cs" />
     <Compile Include="ViewModels\AdditionalWindowViewModel.cs" />
+    <Compile Include="ViewModels\BusesAdditionViewModel.cs" />
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
+    <Compile Include="Views\BusesAdditionView.xaml.cs">
+      <DependentUpon>BusesAdditionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DataBaseView.xaml.cs">
       <DependentUpon>DataBaseView.xaml</DependentUpon>
     </Compile>

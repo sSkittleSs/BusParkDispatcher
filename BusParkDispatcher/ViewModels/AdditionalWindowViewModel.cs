@@ -42,7 +42,7 @@ namespace BusParkDispatcher.ViewModels
 
         public int MaxControlHeight
         {
-            set => SetProperty(ref maxControlHeight, value - 60);
+            set => SetProperty(ref maxControlHeight, value - 45);
             get => maxControlHeight;
         }
 
