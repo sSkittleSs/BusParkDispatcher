@@ -1,4 +1,5 @@
 ﻿using BusParkDispatcher.Commands.Base;
+using BusParkDispatcher.Models;
 using BusParkDispatcher.Models.Database;
 using BusParkDispatcher.Views;
 using BusParkDispatcher.Views.Windows;
@@ -108,6 +109,8 @@ namespace BusParkDispatcher.ViewModels
         public DelegateCommand OpenMain => new DelegateCommand((obj) =>
         {
             ChangeView(new MainView());
+
+            NotificationManager.ShowInformation("Результат диалогового окна: " + new AdditionalWindow().ShowDialog() ?? "NONE");
         });
 
         public DelegateCommand OpenDataBase => new DelegateCommand((obj) =>

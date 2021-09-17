@@ -74,12 +74,14 @@ namespace BusParkDispatcher.ViewModels
         {
             try
             {
+                // Спрашиваем согласие пользователя на сохранение изменений.
                 if (MessageBox.Show("Вы желаете сохранить изменения?", "Внимание", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
+                    // Вызываем метод для сохранения изменений
                     SaveDb();
                 }
             }
-            catch (Exception e) { NotificationManager.ShowError(e.Message); }
+            catch (Exception e) { NotificationManager.ShowError(e.Message); } // В случае возникновения исключений выводим сообщение об ошибке.
         });
 
         public DelegateCommand ChangeTable => new DelegateCommand((tableName) =>
@@ -89,9 +91,19 @@ namespace BusParkDispatcher.ViewModels
 
         public DelegateCommand Update => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.UndoChanges();
-            ChangeTable?.Execute(lastTable);
-            NotificationManager.ShowSuccess($"Таблица '{lastTable}' успешно обновлена к значениям из БД!");
+            try
+            {
+                // Спрашиваем согласие пользователя на отмену внесенных изменений.
+                if (MessageBox.Show("Вы желаете отменить все внесенные изменения?\n\nЭто действие невозможно отменить.", "Внимание", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    MainWindowViewModel.Database.UndoChanges(); // Вызываем метод-расширение для отмены изменений
+                    ChangeTable?.Execute(lastTable); // Заново загружаем последнюю таблицу данных
+                    NotificationManager.ShowSuccess($"Таблица '{lastTable}' успешно обновлена к значениям из БД!"); // Уведомляем пользователя об успехе операции, если исключений не возникло
+                }
+            }
+            catch (Exception e) { NotificationManager.ShowError(e.Message); } // В случае возникновения исключений выводим сообщение об ошибке.
+
+            
         });
 
         #region Database methods
@@ -120,12 +132,16 @@ namespace BusParkDispatcher.ViewModels
 
         public void SaveDb()
         {
+            // Метод SaveDB()
             try
             {
+                // Отправляем запрос на сохранение изменений
                 MainWindowViewModel.Database.SaveChanges();
-                NotificationManager.ShowSuccess("Изменения успешно сохранены!");
+
+                // Выводим сообщение об успехе в случае, если исключений не возникло.
+                NotificationManager.ShowSuccess("Изменения успешно сохранены!"); 
             }
-            catch (Exception e) { NotificationManager.ShowError(e.Message); }
+            catch (Exception e) { NotificationManager.ShowError(e.Message); } // Если исключение возникло, выводим сообщение об ошибке
         }
 
         public static object GetPropValue(object src, string propName)

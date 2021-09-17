@@ -60,8 +60,12 @@ namespace BusParkDispatcher.Models
 
         public ExcelPackage AddNewSheet(ExcelPackage package, string sheetName = default)
         {
+            // Функция заполнения отчета в Excel
+
+            // Создаем новый лист
             var sheet = package.Workbook.Worksheets.Add((sheetName == default ? "Количество автобусов на маршрутах" : sheetName));
 
+            // Настроиваем шапку листа
             const int firstTableRow = 2;
             sheet.Cells[firstTableRow, 1].Value = "Количество автобусов на маршрутах";
             sheet.Cells[firstTableRow, 1].Style.Font.Bold = true;
@@ -71,19 +75,23 @@ namespace BusParkDispatcher.Models
 
             var column = 2;
 
+            // Настраиваем стили ячеек
             sheet.Cells[currentRow, column, currentRow, column + 1].Style.Font.Bold = true;
             sheet.Cells[currentRow, column, currentRow + АвтобусыНаМаршрутах.Count, column].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
             sheet.Cells[currentRow, column + 1, currentRow + АвтобусыНаМаршрутах.Count, column + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
             sheet.Cells[currentRow, column, currentRow + АвтобусыНаМаршрутах.Count, column + 1].Style.Border.BorderAround(ExcelBorderStyle.Double);
             sheet.Cells[currentRow, column, currentRow, column + 1].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 
+            // Дополняем шапку некоторыми данными
             sheet.Cells[currentRow, column].Value = "Маршрут";
             sheet.Cells[currentRow, column + 1].Value = "Количество автобусов";
 
             currentRow++;
 
+            // Проходимся по коллекции автобусов на маршрутах
             foreach (var item in АвтобусыНаМаршрутах)
             {
+                // Добавляем в таблицу данные о номере маршрута и количестве автобусов на данном маршруте
                 sheet.Cells[currentRow, column].Value = item.НомерМаршрута;
                 sheet.Cells[currentRow, column + 1].Value = item.КоличествоАвтобусов;
                 currentRow++;
@@ -91,6 +99,7 @@ namespace BusParkDispatcher.Models
 
             sheet.Cells[firstTableRow, column, currentRow, column + 2].AutoFitColumns();
 
+            // Возвращаем объект файла Excel
             return package;
         }
         #endregion
