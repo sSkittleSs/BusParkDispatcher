@@ -21,13 +21,12 @@
         <Border Background="White" CornerRadius="5" BorderThickness="2" BorderBrush="{Binding BorderBrush, Mode=OneWay}"/>
         <Grid Margin="5">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="17.5"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
             </Grid.RowDefinitions>
 
             <controls:IconButton Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource ExitButton}" Width="15" Command="{Binding Exit}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
-            <TextBlock Grid.Row="0" Text="{Binding WindowTitle, Mode=OneWay}" FontSize="12" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <UserControl Grid.Row="1" Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxWidth="{Binding MaxControlWidth}" MaxHeight="{Binding MaxControlHeight}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
