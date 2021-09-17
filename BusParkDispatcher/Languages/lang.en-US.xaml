@@ -10,6 +10,10 @@
     <mscorlib:String x:Key="ReportsRadioButtonText">Reports</mscorlib:String>
     <!--#endregion-->
 
+    <!--#region Additional-->
+    <mscorlib:String x:Key="EscapeFromAdditionalWindowText">Press Esc to close this window......</mscorlib:String>
+    <!--#endregion-->
+
     <!--#region MainView-->
     <mscorlib:String x:Key="HelloTextBlockText">Hello!</mscorlib:String>
     <mscorlib:String x:Key="ForWorkTextBlockText">For work click on the</mscorlib:String>

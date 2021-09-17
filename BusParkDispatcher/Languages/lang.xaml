@@ -10,6 +10,10 @@
     <mscorlib:String x:Key="ReportsRadioButtonText">Отчеты</mscorlib:String>
     <!--#endregion-->
 
+    <!--#region Additional-->
+    <mscorlib:String x:Key="EscapeFromAdditionalWindowText">Нажмите Esc чтобы вернуться......</mscorlib:String>
+    <!--#endregion-->
+
     <!--#region MainView-->
     <mscorlib:String x:Key="HelloTextBlockText">Приветствую!</mscorlib:String>
     <mscorlib:String x:Key="ForWorkTextBlockText">Для начала работы перейдите в раздел</mscorlib:String>
