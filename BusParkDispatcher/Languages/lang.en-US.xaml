@@ -12,6 +12,14 @@
 
     <!--#region Additional-->
     <mscorlib:String x:Key="EscapeFromAdditionalWindowText">Press Esc to close this window......</mscorlib:String>
+
+    <!--#region BusesAdditionView-->
+    <mscorlib:String x:Key="BusesAdditionViewTitle">Buses addition</mscorlib:String>
+    <mscorlib:String x:Key="BusesAdditionViewTypeId">Bus type id</mscorlib:String>
+    <mscorlib:String x:Key="BusesAdditionViewRouteId">Route id</mscorlib:String>
+    <mscorlib:String x:Key="BusesAdditionViewCarNumberWatermark">Car number</mscorlib:String>
+    <mscorlib:String x:Key="BusesAdditionViewPlacesCountWatermark">Places count</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
