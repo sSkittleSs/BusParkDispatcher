@@ -20,6 +20,44 @@
     <mscorlib:String x:Key="BusesAdditionViewCarNumberWatermark">Регистрационный номер</mscorlib:String>
     <mscorlib:String x:Key="BusesAdditionViewPlacesCountWatermark">Количество мест</mscorlib:String>
     <!--#endregion-->
+    
+    <!--#region BusesTypesAdditionView-->
+    <mscorlib:String x:Key="BusesTypesAdditionViewTitle">Добавление типов автобусов</mscorlib:String>
+    <mscorlib:String x:Key="BusesTypesAdditionViewNameTextBoxWatermark">Наименование типа</mscorlib:String>
+    <mscorlib:String x:Key="BusesTypesAdditionViewDescriptionTextBoxWatermark">Описание типа</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region BusStopsAdditionView-->
+    <mscorlib:String x:Key="BusStopsAdditionViewTitle">Добавление остановок</mscorlib:String>
+    <mscorlib:String x:Key="BusStopsAdditionViewNameTextBoxWatermark">Название остановки</mscorlib:String>
+    <mscorlib:String x:Key="BusStopsAdditionViewDecriptionTextBoxWatermark">Описание остановки</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region DriversAdditionView-->
+    <mscorlib:String x:Key="DriversAdditionViewTitle">Добавление водителей</mscorlib:String>
+    <mscorlib:String x:Key="DriversAdditionViewNameTextBoxWatermark">ФИО водителя</mscorlib:String>
+    <mscorlib:String x:Key="DriversAdditionViewPhoneNumberBoxWatermark">Номер телефона</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region RoutesAdditionView-->
+    <mscorlib:String x:Key="RoutesAdditionViewTitle">Добавление маршрутов</mscorlib:String>
+    <mscorlib:String x:Key="RoutesAdditionViewRouteNumberTextBoxWatermark">Номер маршрута</mscorlib:String>
+    <mscorlib:String x:Key="RoutesAdditionViewDescriptionTextBoxWatermark">Описание маршрута</mscorlib:String>
+    <mscorlib:String x:Key="RoutesAdditionViewTimetableWatermark">Код расписания</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region TimetablesAdditionView-->
+    <mscorlib:String x:Key="TimetablesAdditionViewTitle">Добавление расписаний</mscorlib:String>
+    <mscorlib:String x:Key="TimetablesAdditionViewDateDatePickerWatermark">Дата</mscorlib:String>
+    <mscorlib:String x:Key="TimetablesAdditionViewIsWeekendCheckBoxContent">Является выходным</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region TimeTimetablesBusesAdditionView-->
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTitle">Добавление связи времени-расписаний-автобусов</mscorlib:String>
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTimeWatermark">Код времени</mscorlib:String>
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTimetableWatermark">Код расписания</mscorlib:String>
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewBusStopWatermark">Код остановки</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
@@ -30,12 +68,14 @@
     
     <!--#region DatabaseView-->
     <mscorlib:String x:Key="UndoButtonText">Отменить все изменения</mscorlib:String>
+    <mscorlib:String x:Key="AssignDriverToBusButtonText">Назначить водителя</mscorlib:String>
     <mscorlib:String x:Key="SaveChangesButtonText">Сохранить изменения</mscorlib:String>
     <mscorlib:String x:Key="SearchTextBoxText">Поиск...</mscorlib:String>
     <mscorlib:String x:Key="AddItemButtonText">Добавить</mscorlib:String>
     
     <!--#region ToolTips-->
-    <mscorlib:String x:Key="ToolTipUndoButtonText">Отменяет все последние внесенные изменения в базу данных до последнего сохранения</mscorlib:String>
+    <mscorlib:String x:Key="ToolTipUndoButtonText">Отменяет все последние внесенные изменения в базу данных до последнего сохранения.</mscorlib:String>
+    <mscorlib:String x:Key="ToolTipAssignDriverToBusButtonText">Открывает окно для назначения водителя на определенный автобус(ы).</mscorlib:String>
     <mscorlib:String x:Key="ToolTipAddItemButtonText">Открывает новое окно для добавления нового элемента в базу данных.</mscorlib:String>
     <!--#endregion-->
     <!--#endregion-->

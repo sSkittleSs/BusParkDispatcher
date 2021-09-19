@@ -20,6 +20,44 @@
     <mscorlib:String x:Key="BusesAdditionViewCarNumberWatermark">Car number</mscorlib:String>
     <mscorlib:String x:Key="BusesAdditionViewPlacesCountWatermark">Places count</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region BusesTypesAdditionView-->
+    <mscorlib:String x:Key="BusesTypesAdditionViewTitle">Buses addition</mscorlib:String>
+    <mscorlib:String x:Key="BusesTypesAdditionViewNameTextBoxWatermark">Type name</mscorlib:String>
+    <mscorlib:String x:Key="BusesTypesAdditionViewDescriptionTextBoxWatermark">Type description</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region BusStopsAdditionView-->
+    <mscorlib:String x:Key="BusStopsAdditionViewTitle">Bus stops addition</mscorlib:String>
+    <mscorlib:String x:Key="BusStopsAdditionViewNameTextBoxWatermark">Bus stop's name</mscorlib:String>
+    <mscorlib:String x:Key="BusStopsAdditionViewDecriptionTextBoxWatermark">Bus stop's description</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region DriversAdditionView-->
+    <mscorlib:String x:Key="DriversAdditionViewTitle">Drivers addition</mscorlib:String>
+    <mscorlib:String x:Key="DriversAdditionViewNameTextBoxWatermark">Driver's name</mscorlib:String>
+    <mscorlib:String x:Key="DriversAdditionViewNamePhoneNumberBoxWatermark">Phone number</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region RoutesAdditionView-->
+    <mscorlib:String x:Key="RoutesAdditionViewTitle">Routes addition</mscorlib:String>
+    <mscorlib:String x:Key="RoutesAdditionViewRouteNumberTextBoxWatermark">Route's number</mscorlib:String>
+    <mscorlib:String x:Key="RoutesAdditionViewDescriptionTextBoxWatermark">Description</mscorlib:String>
+    <mscorlib:String x:Key="RoutesAdditionViewTimetableWatermark">Timetable id</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region TimetablesAdditionView-->
+    <mscorlib:String x:Key="TimetablesAdditionViewTitle">Timetables addition</mscorlib:String>
+    <mscorlib:String x:Key="TimetablesAdditionViewDateDatePickerWatermark">Date</mscorlib:String>
+    <mscorlib:String x:Key="TimetablesAdditionViewIsWeekendCheckBoxContent">Is weekend</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region TimeTimetablesBusesAdditionView-->
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTitle">Time-timetables-buses relations addition</mscorlib:String>
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTimeWatermark">Time id</mscorlib:String>
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTimetableWatermark">Timetable id</mscorlib:String>
+    <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewBusStopWatermark">Bus stop id</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
@@ -30,12 +68,14 @@
     
     <!--#region DatabaseView-->
     <mscorlib:String x:Key="UndoButtonText">Undo all changes</mscorlib:String>
+    <mscorlib:String x:Key="AssignDriverToBusButtonText">Assign driver</mscorlib:String>
     <mscorlib:String x:Key="SaveChangesButtonText">Save changes</mscorlib:String>
     <mscorlib:String x:Key="SearchTextBoxText">Search...</mscorlib:String>
     <mscorlib:String x:Key="AddItemButtonText">Add</mscorlib:String>
     
     <!--#region ToolTips-->
     <mscorlib:String x:Key="ToolTipUndoButtonText">Undoes all the last changes made to the database until the last save.</mscorlib:String>
+    <mscorlib:String x:Key="ToolTipAssignDriverToBusButtonText">Opens a new window for assign driver to bus(es).</mscorlib:String>
     <mscorlib:String x:Key="ToolTipAddItemButtonText">Opens a new window for adding a new item to the database.</mscorlib:String>
     <!--#endregion-->
     <!--#endregion-->
