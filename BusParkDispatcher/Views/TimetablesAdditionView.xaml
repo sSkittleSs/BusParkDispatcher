@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="BusParkDispatcher.Views.TimetablesAdditionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BusParkDispatcher.Views"
+             xmlns:uc="clr-namespace:BusParkDispatcher.Controls"
+             xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels"
+             mc:Ignorable="d" 
+             Height="auto" Width="auto" d:DesignHeight="240" d:DesignWidth="796">
+    <UserControl.DataContext>
+        <vm:BusesAdditionViewModel />
+    </UserControl.DataContext>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.RowSpan="4" Style="{StaticResource ViewBorderStyle}"/>
+
+        <TextBlock Grid.Row="0" Text="{DynamicResource TimetablesAdditionViewTitle}" FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+            <uc:DatePickerWatermarked Margin="5 0" Text="{Binding Дата, UpdateSourceTrigger=PropertyChanged}" Watermark="{DynamicResource TimetablesAdditionViewDateDatePickerWatermark}" Width="150"/>
+            <CheckBox Margin="5 0" IsChecked="{Binding ЯвляетсяВыходным}" Content="{DynamicResource TimetablesAdditionViewIsWeekendCheckBoxContent}" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" VerticalAlignment="Bottom" Content="{DynamicResource AddItemButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Add}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="200" Margin="10">
+            <Button.ToolTip>
+                <ToolTip Content="{DynamicResource ToolTipAddItemButtonText}"/>
+            </Button.ToolTip>
+        </Button>
+
+    </Grid>
+</UserControl>
