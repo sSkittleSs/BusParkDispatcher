@@ -96,17 +96,34 @@ namespace BusParkDispatcher.ViewModels
             switch(lastTable)
             {
                 case "Автобусы":
-                    if (new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusesAdditionView(), WindowTitle = "Добавление автобуса" } }.ShowDialog() ?? false)
-                        NotificationManager.ShowSuccess("Новая запись успешно добавлена.\nНе забудьте сохранить изменения.");
-                    else
-                        NotificationManager.ShowError("Запись не была добавлена.");
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusesAdditionView() } }.ShowDialog() ?? false);
+                    break;
+                case "Водители":
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new DriversAdditionView() } }.ShowDialog() ?? false);
+                    break;
+                case "Время":
+                    NotificationManager.ShowWarning("Таблица ''Время'' не может быть изменена.");
+                    break;
+                case "Остановки":
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusStopsAdditionView() } }.ShowDialog() ?? false);
+                    break;
+                case "ТипыАвтобусов":
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusesTypesAdditionView() } }.ShowDialog() ?? false);
                     break;
                 default:
                     break;
             }
         });
 
-        public DelegateCommand Update => new DelegateCommand((obj) =>
+        public DelegateCommand AssignDriverToBus => new DelegateCommand((obj) =>
+        {
+            try
+            {
+                throw new NotImplementedException(nameof(AssignDriverToBus));
+            } catch (Exception e) { NotificationManager.ShowError(e.Message); }
+        });
+
+        public DelegateCommand UndoChanges => new DelegateCommand((obj) =>
         {
             try
             {
@@ -187,13 +204,39 @@ namespace BusParkDispatcher.ViewModels
 
         public IEnumerable<object> SelectData(object src)
         {
+            if (src is ObservableCollection<Автобусы> buses)
+                return from b in buses select new { b.РегистрационныйНомер, ТипАвтобуса = b.ТипыАвтобусов.Наименование, b.КоличествоМест, b.Маршруты.НомерМаршрута };
+
+            if (src is ObservableCollection<Водители> drivers)
+                return from d in drivers select new { d.ФИО, d.НомерТелефона };
+
+            if (src is ObservableCollection<Время> time)
+                return from t in time select new { Время = t.Время1 };
+
+            if (src is ObservableCollection<ВремяРасписанияОстановки> timeTimetablesBusStops)
+                return from ttbs in timeTimetablesBusStops select new { Время = ttbs.Время.Время1, Остановка = ttbs.Остановки.Название, КодРасписания = ttbs.Расписания.КодРасписания };
+
             if (src is ObservableCollection<Маршруты> routes)
                 return from r in routes select new { r.КодМаршрута, r.НомерМаршрута, r.Описание, r.КодРасписания };
+
+            if (src is ObservableCollection<Остановки> busStops)
+                return from bs in busStops select new { bs.Название, bs.Описание };
 
             if (src is ObservableCollection<Расписания> timetables)
                 return from t in timetables select new { t.КодРасписания, t.Дата, t.ЯвляетсяВыходным };
 
+            if (src is ObservableCollection<ТипыАвтобусов> busesTypes)
+                return from bt in busesTypes select new { bt.Наименование, bt.Описание };
+
             return (src as IEnumerable<DbTable>);
+        }
+
+        public void CheckDialogResult(Func<bool> dialog)
+        {
+            if (dialog?.Invoke() ?? false)
+                NotificationManager.ShowSuccess("Новая запись успешно добавлена.\nНе забудьте сохранить изменения.");
+            else
+                NotificationManager.ShowError("Запись не была добавлена.");
         }
         #endregion
         #endregion

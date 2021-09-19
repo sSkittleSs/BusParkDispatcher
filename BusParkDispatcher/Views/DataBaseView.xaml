@@ -41,7 +41,12 @@
             <!--<RadioButton Grid.Row="0" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="" Content="Время-расписание" Style="{StaticResource RadioButtonMenuStyle}" />-->
             <RadioButton Grid.Row="0" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="ТипыАвтобусов" Content="Типы автобусов" Style="{StaticResource RadioButtonMenuStyle}" />
 
-            <Button Grid.Row="1" Grid.Column="4" Content="{DynamicResource UndoButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Update}" Width="170" Margin="10 0">
+            <Button Grid.Row="1" Grid.Column="3" Content="{DynamicResource AssignDriverToBusButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding AssignDriverToBus}" Width="170" Margin="10 0">
+                <Button.ToolTip>
+                    <ToolTip Content="{DynamicResource ToolTipAssignDriverToBusButtonText}"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="4" Content="{DynamicResource UndoButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding UndoChanges}" Width="170" Margin="10 0">
                 <Button.ToolTip>
                     <ToolTip Content="{DynamicResource ToolTipUndoButtonText}"/>
                 </Button.ToolTip>
