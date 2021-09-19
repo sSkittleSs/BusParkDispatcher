@@ -58,6 +58,12 @@
     <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTimetableWatermark">Timetable id</mscorlib:String>
     <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewBusStopWatermark">Bus stop id</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region DriversAsignView-->
+    <mscorlib:String x:Key="DriversAssignViewTitle">Assign driver to bus</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewDriverWatermark">Driver id</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewBusWatermark">Bus id</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->

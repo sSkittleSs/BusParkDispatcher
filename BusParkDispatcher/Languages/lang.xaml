@@ -58,6 +58,12 @@
     <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewTimetableWatermark">Код расписания</mscorlib:String>
     <mscorlib:String x:Key="TimeTimetablesBusesAdditionViewBusStopWatermark">Код остановки</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region DriversAsignView-->
+    <mscorlib:String x:Key="DriversAssignViewTitle">Назначение водителя на автобус</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewDriverWatermark">Код водителя</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewBusWatermark">Код автобуса</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
