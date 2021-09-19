@@ -104,8 +104,17 @@ namespace BusParkDispatcher.ViewModels
                 case "Время":
                     NotificationManager.ShowWarning("Таблица ''Время'' не может быть изменена.");
                     break;
+                case "ВремяРасписанияОстановки":
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new TimeTimetablesBusesAdditionView() } }.ShowDialog() ?? false);
+                    break;
+                case "Маршруты":
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new RoutesAdditionView() } }.ShowDialog() ?? false);
+                    break;
                 case "Остановки":
                     CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusStopsAdditionView() } }.ShowDialog() ?? false);
+                    break;
+                case "Расписания":
+                    CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new TimetablesAdditionView() } }.ShowDialog() ?? false);
                     break;
                 case "ТипыАвтобусов":
                     CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusesTypesAdditionView() } }.ShowDialog() ?? false);
@@ -119,7 +128,7 @@ namespace BusParkDispatcher.ViewModels
         {
             try
             {
-                throw new NotImplementedException(nameof(AssignDriverToBus));
+                CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new DriversAssignView() } }.ShowDialog() ?? false);
             } catch (Exception e) { NotificationManager.ShowError(e.Message); }
         });
 
