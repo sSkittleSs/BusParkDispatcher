@@ -190,6 +190,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DriversAssignView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,6 +277,7 @@
     <Compile Include="ViewModels\BusStopsAdditionViewModel.cs" />
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
     <Compile Include="ViewModels\DriversAdditionViewModel.cs" />
+    <Compile Include="ViewModels\DriversAssignViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
@@ -293,6 +298,9 @@
     </Compile>
     <Compile Include="Views\DriversAdditionView.xaml.cs">
       <DependentUpon>DriversAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DriversAssignView.xaml.cs">
+      <DependentUpon>DriversAssignView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
