@@ -15,7 +15,6 @@ namespace BusParkDispatcher.ViewModels
     {
         #region Fields
         private UserControl currentView;
-        private string windowTitle;
         private int maxControlWidth = 796;
         private int maxControlHeight = 300;
         private Brush borderBrush = Brushes.Blue;
@@ -26,12 +25,6 @@ namespace BusParkDispatcher.ViewModels
         {
             set => SetProperty(ref currentView, value);
             get => currentView;
-        }
-
-        public string WindowTitle
-        {
-            set => SetProperty(ref windowTitle, value);
-            get => windowTitle;
         }
 
         public int MaxControlWidth

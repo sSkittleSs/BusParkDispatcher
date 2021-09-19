@@ -46,12 +46,6 @@ namespace BusParkDispatcher.ViewModels
 
                     SetProperty(ref количествоМест, value);
                 }
-                else
-                {
-                    NotificationManager.ShowError("Текст не может быть преобразован в число.");
-                }
-
-
             }
             get => количествоМест;
         }
