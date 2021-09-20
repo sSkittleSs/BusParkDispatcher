@@ -150,6 +150,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\DateTimePickersStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\GridsStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -234,7 +238,6 @@
     <Compile Include="Commands\OpenHelpCommand.cs" />
     <Compile Include="Controls\BluredTextButton.cs" />
     <Compile Include="Controls\CornerTextBox.cs" />
-    <Compile Include="Controls\DatePickerWatermarked.cs" />
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Images\Icons\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>

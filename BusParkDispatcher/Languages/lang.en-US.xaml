@@ -48,7 +48,6 @@
 
     <!--#region TimetablesAdditionView-->
     <mscorlib:String x:Key="TimetablesAdditionViewTitle">Timetables addition</mscorlib:String>
-    <mscorlib:String x:Key="TimetablesAdditionViewDateDatePickerWatermark">Date</mscorlib:String>
     <mscorlib:String x:Key="TimetablesAdditionViewIsWeekendCheckBoxContent">Is weekend</mscorlib:String>
     <!--#endregion-->
 

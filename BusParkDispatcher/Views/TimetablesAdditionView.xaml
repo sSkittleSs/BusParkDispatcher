@@ -24,7 +24,7 @@
         <TextBlock Grid.Row="0" Text="{DynamicResource TimetablesAdditionViewTitle}" FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
-            <uc:DatePickerWatermarked Margin="5 0" Text="{Binding Дата, UpdateSourceTrigger=PropertyChanged}" Watermark="{DynamicResource TimetablesAdditionViewDateDatePickerWatermark}" Width="150"/>
+            <DatePicker Margin="5 0" Text="{Binding Дата, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DatePickerStyle}" Height="30" Width="150"/>
             <CheckBox Margin="5 0" IsChecked="{Binding ЯвляетсяВыходным}" Content="{DynamicResource TimetablesAdditionViewIsWeekendCheckBoxContent}" VerticalAlignment="Center"/>
         </StackPanel>
 

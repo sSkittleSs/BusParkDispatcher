@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="/Themes/BordersStyles.xaml" />
                 <ResourceDictionary Source="/Themes/ToolTipsStyles.xaml" />
                 <ResourceDictionary Source="/Themes/ComboBoxesStyles.xaml" />
+                <ResourceDictionary Source="/Themes/DateTimePickersStyles.xaml" />
                 <ResourceDictionary Source="/Languages/lang.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

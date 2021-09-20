@@ -7,9 +7,6 @@
              xmlns:uc="clr-namespace:BusParkDispatcher.Controls"
              xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels"
              mc:Ignorable="d" d:DesignHeight="370" d:DesignWidth="796">
-    <UserControl.DataContext>
-        <vm:DataBaseViewModel/>
-    </UserControl.DataContext>
 
     <Grid Width="500" Height="130" Margin="10">
         <Border Style="{StaticResource ViewBorderStyle}"/>

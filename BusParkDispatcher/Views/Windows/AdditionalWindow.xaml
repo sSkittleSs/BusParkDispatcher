@@ -6,19 +6,26 @@
         xmlns:local="clr-namespace:BusParkDispatcher.Views.Windows" 
         xmlns:controls="clr-namespace:BusParkDispatcher.Controls"
         xmlns:vm="clr-namespace:BusParkDispatcher.ViewModels"
+        xmlns:cmd="clr-namespace:BusParkDispatcher.Commands"
         mc:Ignorable="d"
         Title="AdditionalWindow" Height="300" Width="796" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="Transparent">
 
+    <Window.Resources>
+        <cmd:DragWindowCommand x:Key="DragWindowCommand"/>
+    </Window.Resources>
     <Window.DataContext>
         <vm:AdditionalWindowViewModel />
     </Window.DataContext>
-
     <Window.InputBindings>
         <KeyBinding Key="Escape" Command="{Binding Exit}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
     </Window.InputBindings>
 
     <Grid Width="Auto" Height="Auto">
-        <Border Background="White" CornerRadius="5" BorderThickness="2" BorderBrush="{Binding BorderBrush, Mode=OneWay}"/>
+        <Border Background="White" CornerRadius="5" BorderThickness="2" BorderBrush="{Binding BorderBrush, Mode=OneWay}">
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{StaticResource DragWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+            </Border.InputBindings>
+        </Border>
         <Grid Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="17.5"/>
@@ -32,7 +39,6 @@
 
             <TextBlock Grid.Row="2" Text="{DynamicResource EscapeFromAdditionalWindowText}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="10"/>
 
-            <controls:IconButton Grid.Row="2"  Command="{Binding Confirm}" Width="88" IsDefault="True"/>
         </Grid>
     </Grid>
 </Window>

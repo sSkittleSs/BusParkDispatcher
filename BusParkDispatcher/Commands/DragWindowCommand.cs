@@ -1,5 +1,6 @@
 ﻿using BusParkDispatcher.Commands.Base;
 using BusParkDispatcher.ViewModels;
+using System.Windows;
 
 namespace BusParkDispatcher.Commands
 {
@@ -7,6 +8,10 @@ namespace BusParkDispatcher.Commands
     {
         public override bool CanExecute(object parameter = null) => true;
 
-        public override void Execute(object parameter = null) => MainWindowViewModel.MainWindow.DragMove();
+        public override void Execute(object parameter = null)
+        {
+            if (parameter is Window window)
+                window.DragMove();
+        }
     }
 }

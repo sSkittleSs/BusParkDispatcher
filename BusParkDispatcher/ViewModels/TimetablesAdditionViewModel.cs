@@ -11,7 +11,7 @@ namespace BusParkDispatcher.ViewModels
     class TimetablesAdditionViewModel : ObservableObject
     {
         #region Fields
-        private DateTime дата;
+        private DateTime дата = DateTime.Today;
         private bool являетсяВыходным;
         #endregion
 
