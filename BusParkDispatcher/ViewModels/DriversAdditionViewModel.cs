@@ -48,7 +48,7 @@ namespace BusParkDispatcher.ViewModels
         #region Commands / Methods
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.Водители.Add(new Models.Database.Водители() { ФИО = ФИО, НомерТелефона = Convert.ToInt64(НомерТелефона) });
+            MainWindowViewModel.Database.Водители.Local.Add(new Models.Database.Водители() { ФИО = ФИО, НомерТелефона = Convert.ToInt64(НомерТелефона) });
 
             if (obj is AdditionalWindow window)
             {

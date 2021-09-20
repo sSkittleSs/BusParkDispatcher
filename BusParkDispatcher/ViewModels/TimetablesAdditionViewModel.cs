@@ -36,7 +36,7 @@ namespace BusParkDispatcher.ViewModels
         #region Commands / Methods
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.Расписания.Add(new Models.Database.Расписания() { Дата = Дата, ЯвляетсяВыходным = ЯвляетсяВыходным });
+            MainWindowViewModel.Database.Расписания.Local.Add(new Models.Database.Расписания() { Дата = Дата, ЯвляетсяВыходным = ЯвляетсяВыходным });
 
             if (obj is AdditionalWindow window)
             {

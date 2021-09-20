@@ -27,6 +27,9 @@ namespace BusParkDispatcher.ViewModels
         {
             set
             {
+                if (value.Length > 9)
+                    return;
+
                 SetProperty(ref регистрационныйНомер, value);
             }
             get => регистрационныйНомер;
@@ -97,7 +100,7 @@ namespace BusParkDispatcher.ViewModels
         #region Commands / Methods
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.Автобусы.Add(new Автобусы() { РегистрационныйНомер = РегистрационныйНомер, КоличествоМест = Convert.ToInt32(КоличествоМест), КодТипа = КодТипа, КодМаршрута = КодМаршрута });
+            MainWindowViewModel.Database.Автобусы.Local.Add(new Автобусы() { РегистрационныйНомер = РегистрационныйНомер, КоличествоМест = Convert.ToInt32(КоличествоМест), КодТипа = КодТипа, КодМаршрута = КодМаршрута });
             
             if (obj is AdditionalWindow window)
             {

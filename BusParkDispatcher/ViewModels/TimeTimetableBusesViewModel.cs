@@ -86,7 +86,7 @@ namespace BusParkDispatcher.ViewModels
         #region Commands / Methods
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.ВремяРасписанияОстановки.Add(new ВремяРасписанияОстановки() { КодВремени = КодВремени, КодОстановки = КодОстановки, КодРасписания = КодРасписания });
+            MainWindowViewModel.Database.ВремяРасписанияОстановки.Local.Add(new ВремяРасписанияОстановки() { КодВремени = КодВремени, КодОстановки = КодОстановки, КодРасписания = КодРасписания });
 
             if (obj is AdditionalWindow window)
             {

@@ -145,8 +145,6 @@ namespace BusParkDispatcher.ViewModels
                 }
             }
             catch (Exception e) { NotificationManager.ShowError(e.Message); } // В случае возникновения исключений выводим сообщение об ошибке.
-
-            
         });
 
         #region Database methods
@@ -180,6 +178,8 @@ namespace BusParkDispatcher.ViewModels
             {
                 // Отправляем запрос на сохранение изменений
                 MainWindowViewModel.Database.SaveChanges();
+
+                SetDataSource(lastTable);
 
                 // Выводим сообщение об успехе в случае, если исключений не возникло.
                 NotificationManager.ShowSuccess("Изменения успешно сохранены!"); 
@@ -243,9 +243,14 @@ namespace BusParkDispatcher.ViewModels
         public void CheckDialogResult(Func<bool> dialog)
         {
             if (dialog?.Invoke() ?? false)
+            {
                 NotificationManager.ShowSuccess("Новая запись успешно добавлена.\nНе забудьте сохранить изменения.");
+                SetDataSource(lastTable);
+            }
             else
+            {
                 NotificationManager.ShowError("Запись не была добавлена.");
+            }
         }
         #endregion
         #endregion

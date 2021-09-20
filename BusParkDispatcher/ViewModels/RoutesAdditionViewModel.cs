@@ -79,7 +79,7 @@ namespace BusParkDispatcher.ViewModels
         #region Commands / Methods
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.Маршруты.Add(new Маршруты() { НомерМаршрута = Convert.ToInt32(НомерМаршрута), Описание = Описание, КодРасписания = КодРасписания });
+            MainWindowViewModel.Database.Маршруты.Local.Add(new Маршруты() { НомерМаршрута = Convert.ToInt32(НомерМаршрута), Описание = Описание, КодРасписания = КодРасписания });
 
             if (obj is AdditionalWindow window)
             {

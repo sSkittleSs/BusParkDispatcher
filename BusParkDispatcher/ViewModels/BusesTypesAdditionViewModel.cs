@@ -48,7 +48,7 @@ namespace BusParkDispatcher.ViewModels
         #region Commands / Methods
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            MainWindowViewModel.Database.ТипыАвтобусов.Add(new Models.Database.ТипыАвтобусов() { Наименование = Наименование, Описание = Описание });
+            MainWindowViewModel.Database.ТипыАвтобусов.Local.Add(new Models.Database.ТипыАвтобусов() { Наименование = Наименование, Описание = Описание });
 
             if (obj is AdditionalWindow window)
             {

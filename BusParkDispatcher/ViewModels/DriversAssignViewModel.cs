@@ -67,7 +67,7 @@ namespace BusParkDispatcher.ViewModels
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
             var driver = MainWindowViewModel.Database.Водители.Local.FirstOrDefault((item) => item.КодВодителя == КодВодителя);
-            MainWindowViewModel.Database.Автобусы.FirstOrDefault((item) => item.КодАвтобуса == КодАвтобуса).Водители.Add(driver);
+            MainWindowViewModel.Database.Автобусы.Local.FirstOrDefault((item) => item.КодАвтобуса == КодАвтобуса).Водители.Add(driver);
 
             if (obj is AdditionalWindow window)
             {
