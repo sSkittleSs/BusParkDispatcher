@@ -59,18 +59,31 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=5.7.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.7.4\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="Notifications.Wpf, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Notifications.Wpf.0.1.1\lib\net461\Notifications.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -157,7 +170,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BusesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BusesTypesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BusStopsAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DataBaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DriversAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DriversAssignView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +199,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ReportsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoutesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimetablesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeTimetablesBusesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\AdditionalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,29 +256,69 @@
     </Compile>
     <Compile Include="Infrastructure\DbTable.cs" />
     <Compile Include="Infrastructure\Extensions.cs" />
+    <Compile Include="Infrastructure\IExcelReportGeneratable.cs" />
+    <Compile Include="Models\BusesOnTheRoute.cs" />
+    <Compile Include="Models\BusesOnTheRouteReport.cs" />
+    <Compile Include="Models\BusStopTime.cs" />
     <Compile Include="Models\Database\ApplicationContext.cs" />
-    <Compile Include="Models\Database\sysdiagrams.cs" />
     <Compile Include="Models\Database\Автобусы.cs" />
     <Compile Include="Models\Database\Водители.cs" />
     <Compile Include="Models\Database\Время.cs" />
+    <Compile Include="Models\Database\ВремяРасписанияОстановки.cs" />
     <Compile Include="Models\Database\Маршруты.cs" />
-    <Compile Include="Models\Database\МаршрутыОстановки.cs" />
     <Compile Include="Models\Database\Остановки.cs" />
     <Compile Include="Models\Database\Расписания.cs" />
     <Compile Include="Models\Database\ТипыАвтобусов.cs" />
     <Compile Include="Models\NotificationManager.cs" />
+    <Compile Include="Models\TimetableReport.cs" />
+    <Compile Include="ViewModels\AdditionalWindowViewModel.cs" />
+    <Compile Include="ViewModels\BusesAdditionViewModel.cs" />
+    <Compile Include="ViewModels\BusesTypesAdditionViewModel.cs" />
+    <Compile Include="ViewModels\BusStopsAdditionViewModel.cs" />
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
+    <Compile Include="ViewModels\DriversAdditionViewModel.cs" />
+    <Compile Include="ViewModels\DriversAssignViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
+    <Compile Include="ViewModels\RoutesAdditionViewModel.cs" />
+    <Compile Include="ViewModels\TimetablesAdditionViewModel.cs" />
+    <Compile Include="ViewModels\TimeTimetableBusesViewModel.cs" />
+    <Compile Include="Views\BusesAdditionView.xaml.cs">
+      <DependentUpon>BusesAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BusesTypesAdditionView.xaml.cs">
+      <DependentUpon>BusesTypesAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BusStopsAdditionView.xaml.cs">
+      <DependentUpon>BusStopsAdditionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DataBaseView.xaml.cs">
       <DependentUpon>DataBaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DriversAdditionView.xaml.cs">
+      <DependentUpon>DriversAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DriversAssignView.xaml.cs">
+      <DependentUpon>DriversAssignView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReportsView.xaml.cs">
       <DependentUpon>ReportsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoutesAdditionView.xaml.cs">
+      <DependentUpon>RoutesAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimetablesAdditionView.xaml.cs">
+      <DependentUpon>TimetablesAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeTimetablesBusesAdditionView.xaml.cs">
+      <DependentUpon>TimeTimetablesBusesAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AdditionalWindow.xaml.cs">
+      <DependentUpon>AdditionalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -281,6 +370,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\TimetableReportExample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BusesOnTheRoutesReportExample.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

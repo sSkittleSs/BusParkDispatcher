@@ -12,8 +12,8 @@ namespace BusParkDispatcher.Models.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Расписания()
         {
+            ВремяРасписанияОстановки = new HashSet<ВремяРасписанияОстановки>();
             Маршруты = new HashSet<Маршруты>();
-            Время = new HashSet<Время>();
         }
 
         [Column(TypeName = "date")]
@@ -25,9 +25,9 @@ namespace BusParkDispatcher.Models.Database
         public int КодРасписания { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Маршруты> Маршруты { get; set; }
+        public virtual ICollection<ВремяРасписанияОстановки> ВремяРасписанияОстановки { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Время> Время { get; set; }
+        public virtual ICollection<Маршруты> Маршруты { get; set; }
     }
 }

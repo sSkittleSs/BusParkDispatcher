@@ -9,7 +9,13 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Margin="5" VerticalAlignment="Center" Text="{DynamicResource ToolTipPromptText}" FontWeight="Bold"/>
                             <Rectangle Margin="5" Fill="Black" VerticalAlignment="Stretch" Width="1"/>
-                            <TextBlock Margin="5" Text="{TemplateBinding Property=Content}" MaxWidth="400" TextWrapping="Wrap"/>
+                            <ContentPresenter Margin="5" Content="{TemplateBinding Property=Content}" MaxWidth="400">
+                                <ContentPresenter.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                    </Style>
+                                </ContentPresenter.Resources>
+                            </ContentPresenter>
                         </StackPanel>
                     </Border>
                 </ControlTemplate>

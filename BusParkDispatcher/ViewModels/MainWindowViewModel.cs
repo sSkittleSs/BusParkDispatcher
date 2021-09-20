@@ -1,7 +1,9 @@
 ﻿using BusParkDispatcher.Commands.Base;
+using BusParkDispatcher.Models;
 using BusParkDispatcher.Models.Database;
 using BusParkDispatcher.Views;
 using BusParkDispatcher.Views.Windows;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -96,6 +98,8 @@ namespace BusParkDispatcher.ViewModels
             App.Language = BusParkDispatcher.Properties.Settings.Default.DefaultLanguage;
             SelectedLanguage = App.Language;
             OpenMain?.Execute();
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
         #endregion
 

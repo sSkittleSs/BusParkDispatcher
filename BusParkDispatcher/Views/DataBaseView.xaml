@@ -9,7 +9,7 @@
     <UserControl.DataContext>
         <vm:DataBaseViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="78"/>
@@ -36,10 +36,20 @@
             <RadioButton Grid.Row="0" Grid.Column="1" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="Водители" Content="Водители" Style="{StaticResource RadioButtonMenuStyle}" />
             <RadioButton Grid.Row="1" Grid.Column="1" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="Расписания" Content="Расписания" Style="{StaticResource RadioButtonMenuStyle}" />
             <RadioButton Grid.Row="0" Grid.Column="2" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="Автобусы" Content="Автобусы" Style="{StaticResource RadioButtonMenuStyle}" />
-            <!--<RadioButton Grid.Row="0" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="" Content="Автобусы-водители" Style="{StaticResource RadioButtonMenuStyle}" />-->
-            <RadioButton Grid.Row="1" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="МаршрутыОстановки" Content="Маршруты-остановки" Style="{StaticResource RadioButtonMenuStyle}" />
-            <!--<RadioButton Grid.Row="0" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="" Content="Время-расписание" Style="{StaticResource RadioButtonMenuStyle}" />-->
-            <RadioButton Grid.Row="1" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="ТипыАвтобусов" Content="Типы автобусов" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="1" Grid.Column="2" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="Остановки" Content="Остановки" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="0" Grid.Column="3" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="ВремяРасписанияОстановки" Content="ВремяРасписание" Style="{StaticResource RadioButtonMenuStyle}" />
+            <RadioButton Grid.Row="0" Grid.Column="4" FontSize="21" HorizontalAlignment="Center" Command="{Binding ChangeTable}" CommandParameter="ТипыАвтобусов" Content="Типы автобусов" Style="{StaticResource RadioButtonMenuStyle}" />
+
+            <Button Grid.Row="1" Grid.Column="3" Content="{DynamicResource AssignDriverToBusButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding AssignDriverToBus}" Width="170" Margin="10 0">
+                <Button.ToolTip>
+                    <ToolTip Content="{DynamicResource ToolTipAssignDriverToBusButtonText}"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="4" Content="{DynamicResource UndoButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding UndoChanges}" Width="170" Margin="10 0">
+                <Button.ToolTip>
+                    <ToolTip Content="{DynamicResource ToolTipUndoButtonText}"/>
+                </Button.ToolTip>
+            </Button>
         </Grid>
 
         <DataGrid Grid.Row="1" ItemsSource="{Binding Items, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" 
@@ -54,9 +64,9 @@
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0">
             <uc:CornerTextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" WatermarkText="{DynamicResource SearchTextBoxText}" Margin="10 0"/>
             <Button Content="{DynamicResource SaveChangesButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding SaveChanges}" Width="250" Margin="10 0"/>
-            <Button Content="{DynamicResource UndoButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Update}" Width="250" Margin="10 0">
+            <Button Content="{DynamicResource AddItemButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Add}" Width="250" Margin="10 0">
                 <Button.ToolTip>
-                    <ToolTip Content="{DynamicResource ToolTipUndoButtonText}"/>
+                    <ToolTip Content="{DynamicResource ToolTipAddItemButtonText}"/>
                 </Button.ToolTip>
             </Button>
         </StackPanel>
