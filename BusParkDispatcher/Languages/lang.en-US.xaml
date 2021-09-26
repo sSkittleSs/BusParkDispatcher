@@ -77,6 +77,12 @@
     <mscorlib:String x:Key="TimetableReportViewRouteWatermark">Route id</mscorlib:String>
     <mscorlib:String x:Key="TimetableReportViewCreateReportForAllButtonText">Create report for all routes</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region RouteInfoReportView-->
+    <mscorlib:String x:Key="RouteInfoReportViewTitle">Creating report on the all information about the route</mscorlib:String>
+    <mscorlib:String x:Key="RouteInfoReportViewRouteWatermark">Route id</mscorlib:String>
+    <mscorlib:String x:Key="RouteInfoReportViewCreateReportForAllButtonText">Create report for all routes</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->

@@ -34,26 +34,7 @@ namespace BusParkDispatcher.ViewModels
 
 
         public DelegateCommand CreateRouteInfoReport => new DelegateCommand((obj) =>
-        {
-
-#if RELEASE
-            var расписание = new List<BusStopTime>();
-            расписание.Add(new BusStopTime("Каменногорская 18", new TimeSpan(8, 30, 0)));
-            расписание.Add(new BusStopTime("Каменногорская", new TimeSpan(8, 35, 0)));
-            расписание.Add(new BusStopTime("Казимировская 21", new TimeSpan(8, 40, 0)));
-            расписание.Add(new BusStopTime("Казимировская", new TimeSpan(8, 45, 0)));
-            SaveReportToExcelFile(new TimetableReport(159, DateTime.Today, true, расписание));
-#else
-            var маршруты = MainWindowViewModel.Database.Маршруты.Local;
-            var timetableReports = new List<RouteInfoReport>();
-            foreach (var item in маршруты)
-                timetableReports.Add(new RouteInfoReport(item.НомерМаршрута));
-
-            foreach (var item in timetableReports)
-                SaveReportToExcelFile(item);
-#endif
-
-        });
+            CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new RouteInfoReportAdditionalView() } }.ShowDialog() ?? false));
 
         public DelegateCommand CreateHoursInDriveReport => new DelegateCommand((obj) =>
             CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new HoursInDriveReportAdditionalView() } }.ShowDialog() ?? false));
@@ -61,21 +42,14 @@ namespace BusParkDispatcher.ViewModels
         public DelegateCommand CreateBusesOnTheRoutesReport => new DelegateCommand((obj) =>
         {
             // Создаем коллекцию из объектов автобусов на маршрутах
-            var автобусыНаМаршрутах = new List<BusesOnTheRoute>();
+            var busesOnTheRoutes = new List<BusesOnTheRoute>();
 
-#if DEBUG
-            автобусыНаМаршрутах.Add(new BusesOnTheRoute(1, 22));
-            автобусыНаМаршрутах.Add(new BusesOnTheRoute(159, 8));
-            автобусыНаМаршрутах.Add(new BusesOnTheRoute(42, 6));
-            автобусыНаМаршрутах.Add(new BusesOnTheRoute(36, 2));
-#else
             // получаем все маршруты из базы данных
-            var маршруты = MainWindowViewModel.Database.Маршруты.Local;
-            foreach (var item in маршруты) // Проходим по каждому маршруту и создаем объект на основе номера маршрута
-                автобусыНаМаршрутах.Add(new BusesOnTheRoute(item.НомерМаршрута));
-#endif
+            var routes = MainWindowViewModel.Database.Маршруты.Local;
+            foreach (var item in routes) // Проходим по каждому маршруту и создаем объект на основе номера маршрута
+                busesOnTheRoutes.Add(new BusesOnTheRoute(item.НомерМаршрута));
 
-            SaveReportToExcelFile(new BusesOnTheRouteReport(автобусыНаМаршрутах));
+            SaveReportToExcelFile(new BusesOnTheRouteReport(busesOnTheRoutes));
 
         });
 

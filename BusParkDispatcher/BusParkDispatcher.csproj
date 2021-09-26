@@ -210,6 +210,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RouteInfoReportAdditionalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RoutesAdditionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -297,6 +301,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
+    <Compile Include="ViewModels\RouteInfoReportAdditionalViewModel.cs" />
     <Compile Include="ViewModels\RoutesAdditionViewModel.cs" />
     <Compile Include="ViewModels\TimetableReportAdditionViewModel.cs" />
     <Compile Include="ViewModels\TimetablesAdditionViewModel.cs" />
@@ -327,6 +332,9 @@
     </Compile>
     <Compile Include="Views\ReportsView.xaml.cs">
       <DependentUpon>ReportsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RouteInfoReportAdditionalView.xaml.cs">
+      <DependentUpon>RouteInfoReportAdditionalView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RoutesAdditionView.xaml.cs">
       <DependentUpon>RoutesAdditionView.xaml</DependentUpon>

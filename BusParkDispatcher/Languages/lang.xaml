@@ -73,9 +73,15 @@
     <!--#endregion-->
     
     <!--#region TimetableReportView-->
-    <mscorlib:String x:Key="TimetableReportViewTitle">Создание отчета о текущем расписании</mscorlib:String>
-    <mscorlib:String x:Key="TimetableReportViewRouteWatermark">Код расписания</mscorlib:String>
+    <mscorlib:String x:Key="TimetableReportViewTitle">Создание отчета о текущем расписании для маршрута</mscorlib:String>
+    <mscorlib:String x:Key="TimetableReportViewRouteWatermark">Код маршрута</mscorlib:String>
     <mscorlib:String x:Key="TimetableReportViewCreateReportForAllButtonText">Создать отчет для всех маршрутов</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region RouteInfoReportView-->
+    <mscorlib:String x:Key="RouteInfoReportViewTitle">Создание отчета о полной информации о маршруте</mscorlib:String>
+    <mscorlib:String x:Key="RouteInfoReportViewRouteWatermark">Код маршрута</mscorlib:String>
+    <mscorlib:String x:Key="RouteInfoReportViewCreateReportForAllButtonText">Создать отчет для всех маршрутов</mscorlib:String>
     <!--#endregion-->
     <!--#endregion-->
 
