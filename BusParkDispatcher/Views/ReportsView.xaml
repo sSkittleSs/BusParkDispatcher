@@ -50,15 +50,18 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.InputBindings>
-                <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport2}"/>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding CreateRouteInfoReport}"/>
             </Grid.InputBindings>
+            <Grid.ToolTip>
+                <Image Source="/Images/RouteInfoReportExample.png" Width="400" Height="200"/>
+            </Grid.ToolTip>
             <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Border CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5">
                 <Border.Background >
-                    <ImageBrush Stretch="Fill" />
+                    <ImageBrush ImageSource="/Images/RouteInfoReportExample.png" Stretch="Fill" />
                 </Border.Background>
             </Border>
-            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report2TextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource ReportRouteInfoTextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>
@@ -66,15 +69,18 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.InputBindings>
-                <MouseBinding MouseAction="LeftClick" Command="{Binding CreateReport3}"/>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHoursInDriveReport}"/>
             </Grid.InputBindings>
+            <Grid.ToolTip>
+                <Image Source="/Images/HoursInDriveReportExample.png" Width="400" Height="200"/>
+            </Grid.ToolTip>
             <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
             <Border CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5">
                 <Border.Background >
-                    <ImageBrush Stretch="Fill" />
+                    <ImageBrush ImageSource="/Images/HoursInDriveReportExample.png" Stretch="Fill" />
                 </Border.Background>
             </Border>
-            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource Report3TextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource ReportHoursInDriveTextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>

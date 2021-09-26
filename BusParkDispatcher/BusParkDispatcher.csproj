@@ -198,6 +198,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\HoursInDriveReportAdditionalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RoutesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimetableReportAdditionalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,6 +268,7 @@
     <Compile Include="Infrastructure\DbTable.cs" />
     <Compile Include="Infrastructure\Extensions.cs" />
     <Compile Include="Infrastructure\IExcelReportGeneratable.cs" />
+    <Compile Include="Infrastructure\Report.cs" />
     <Compile Include="Models\BusesOnTheRoute.cs" />
     <Compile Include="Models\BusesOnTheRouteReport.cs" />
     <Compile Include="Models\BusStopTime.cs" />
@@ -272,7 +281,10 @@
     <Compile Include="Models\Database\Остановки.cs" />
     <Compile Include="Models\Database\Расписания.cs" />
     <Compile Include="Models\Database\ТипыАвтобусов.cs" />
+    <Compile Include="Models\HoursInDriveReport.cs" />
     <Compile Include="Models\NotificationManager.cs" />
+    <Compile Include="Models\Database\КоличествоОстановокНаМаршрутеВодителя.cs" />
+    <Compile Include="Models\RouteInfoReport.cs" />
     <Compile Include="Models\TimetableReport.cs" />
     <Compile Include="ViewModels\AdditionalWindowViewModel.cs" />
     <Compile Include="ViewModels\BusesAdditionViewModel.cs" />
@@ -281,10 +293,12 @@
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
     <Compile Include="ViewModels\DriversAdditionViewModel.cs" />
     <Compile Include="ViewModels\DriversAssignViewModel.cs" />
+    <Compile Include="ViewModels\HoursInDriveReportAdditionalViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="ViewModels\ReportsViewModel.cs" />
     <Compile Include="ViewModels\RoutesAdditionViewModel.cs" />
+    <Compile Include="ViewModels\TimetableReportAdditionViewModel.cs" />
     <Compile Include="ViewModels\TimetablesAdditionViewModel.cs" />
     <Compile Include="ViewModels\TimeTimetableBusesViewModel.cs" />
     <Compile Include="Views\BusesAdditionView.xaml.cs">
@@ -305,6 +319,9 @@
     <Compile Include="Views\DriversAssignView.xaml.cs">
       <DependentUpon>DriversAssignView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\HoursInDriveReportAdditionalView.xaml.cs">
+      <DependentUpon>HoursInDriveReportAdditionalView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -313,6 +330,9 @@
     </Compile>
     <Compile Include="Views\RoutesAdditionView.xaml.cs">
       <DependentUpon>RoutesAdditionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimetableReportAdditionalView.xaml.cs">
+      <DependentUpon>TimetableReportAdditionalView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TimetablesAdditionView.xaml.cs">
       <DependentUpon>TimetablesAdditionView.xaml</DependentUpon>
@@ -378,6 +398,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BusesOnTheRoutesReportExample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RouteInfoReportExample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\HoursInDriveReportExample.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
