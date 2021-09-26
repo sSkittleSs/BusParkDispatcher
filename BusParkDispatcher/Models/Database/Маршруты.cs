@@ -17,7 +17,7 @@ namespace BusParkDispatcher.Models.Database
 
         public int НомерМаршрута { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(150)]
         public string Описание { get; set; }
 

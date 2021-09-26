@@ -19,7 +19,7 @@ namespace BusParkDispatcher.Models.Database
         [StringLength(50)]
         public string Наименование { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(150)]
         public string Описание { get; set; }
 

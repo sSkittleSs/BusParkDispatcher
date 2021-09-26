@@ -20,6 +20,7 @@ namespace BusParkDispatcher.Models.Database
         public virtual DbSet<Остановки> Остановки { get; set; }
         public virtual DbSet<Расписания> Расписания { get; set; }
         public virtual DbSet<ТипыАвтобусов> ТипыАвтобусов { get; set; }
+        public virtual DbSet<КоличествоОстановокНаМаршрутеВодителя> КоличествоОстановокНаМаршрутеВодителя { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
