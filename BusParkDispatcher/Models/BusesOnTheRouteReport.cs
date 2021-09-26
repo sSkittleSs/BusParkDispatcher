@@ -1,5 +1,6 @@
 ﻿using BusParkDispatcher.Infrastructure;
 using OfficeOpenXml;
+using OfficeOpenXml.Drawing.Chart;
 using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
@@ -88,16 +89,26 @@ namespace BusParkDispatcher.Models
 
             currentRow++;
 
+            //
+            var chart = sheet.Drawings.AddChart("FindingsChart", eChartType.ColumnClustered);
+            chart.Title.Text = "Количество автобусов на маршрутах";
+            chart.SetPosition(3, 0, 5, 0);
+            chart.SetSize(800, 400);
+            
+            //
+
             // Проходимся по коллекции автобусов на маршрутах
             foreach (var item in АвтобусыНаМаршрутах)
             {
                 // Добавляем в таблицу данные о номере маршрута и количестве автобусов на данном маршруте
                 sheet.Cells[currentRow, column].Value = item.НомерМаршрута;
                 sheet.Cells[currentRow, column + 1].Value = item.КоличествоАвтобусов;
+                chart.Series.Add(sheet.Cells[currentRow, column + 1]).Header = item.НомерМаршрута.ToString();
+
                 currentRow++;
             }
 
-            sheet.Cells[firstTableRow, column, currentRow, column + 2].AutoFitColumns();
+            sheet.Cells[firstTableRow, column, currentRow, column + 1].AutoFitColumns();
 
             // Возвращаем объект файла Excel
             return package;

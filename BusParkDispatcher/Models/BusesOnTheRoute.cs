@@ -20,8 +20,8 @@ namespace BusParkDispatcher.Models
         {
             НомерМаршрута = номерМаршрута;
             var кодМаршрута = MainWindowViewModel.Database.Маршруты.Local.FirstOrDefault((obj) => obj.НомерМаршрута == НомерМаршрута)?.КодМаршрута ?? -1;
-
-            КоличествоАвтобусов = MainWindowViewModel.Database.Автобусы.Local.Where((obj) => obj.КодМаршрута == кодМаршрута).Count();
+            
+            КоличествоАвтобусов = MainWindowViewModel.Database.Автобусы.Local.Count((obj) => obj.КодМаршрута == кодМаршрута);
         }
 
         public BusesOnTheRoute(int номерМаршрута, int количествоАвтобусов)

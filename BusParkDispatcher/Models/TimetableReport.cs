@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BusParkDispatcher.Models
 {
-    class TimetableReport : IExcelReportGeneratable
+    class TimetableReport : Report
     {
         #region Properties
         public int НомерМаршрута { get; set; }
@@ -20,7 +20,7 @@ namespace BusParkDispatcher.Models
 
         public bool ЯвляетсяВыходным { get; set; }
 
-        public ICollection<BusStopTime> Расписание { set; get; }
+        public ICollection<BusStopTime> Расписание { set; get; } = new List<BusStopTime>();
         #endregion
 
         #region Constructors
@@ -52,30 +52,7 @@ namespace BusParkDispatcher.Models
         #endregion
 
         #region Methods
-        protected byte[] GenerateReportToNewExcelFile()
-        {
-            var package = AddNewSheet(new ExcelPackage());
-
-            return package.GetAsByteArray();
-        }
-
-        public bool WriteToNewExcelFile(string path)
-        {
-            try
-            {
-                File.WriteAllBytes(path, GenerateReportToNewExcelFile());
-            }
-            catch(Exception e)
-            {
-                NotificationManager.ShowError(e.Message);
-                return false;
-            }
-
-            NotificationManager.ShowSuccess("Отчет успешно создан по следующему пути: " + path);
-            return true;
-        }
-
-        public ExcelPackage AddNewSheet(ExcelPackage package, string sheetName = default)
+        public override ExcelPackage AddNewSheet(ExcelPackage package, string sheetName = default)
         {
             var sheet = package.Workbook.Worksheets.Add((sheetName == default ? "Расписание маршрута №" + НомерМаршрута : sheetName));
 
@@ -84,6 +61,8 @@ namespace BusParkDispatcher.Models
             sheet.Cells["B1"].Value = $"Номер маршрута:";
             sheet.Cells["B2"].Value = $"Дата:";
             sheet.Cells["B3"].Value = $"Является выходным днем:";
+
+            sheet.Column(2).Width = 119;
 
             sheet.Cells["C1:C3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
             sheet.Cells["C2"].Style.Numberformat.Format = "dd.mm.yyyy";
@@ -117,7 +96,7 @@ namespace BusParkDispatcher.Models
                 currentRow++;
             }
 
-            sheet.Cells[firstTableRow, column, currentRow, column + 1].AutoFitColumns();
+            sheet.Cells[firstTableRow, column, currentRow, column + 2].AutoFitColumns();
             sheet.Cells[firstTableRow, column, currentRow, column].Style.Numberformat.Format = "hh:mm";
 
             return package;
