@@ -65,7 +65,6 @@ namespace BusParkDispatcher.ViewModels
         #region Constructors
         public DataBaseViewModel()
         {
-            LoadDb();
             ChangeTable.Execute("Маршруты");
         }
         #endregion
@@ -148,17 +147,7 @@ namespace BusParkDispatcher.ViewModels
         });
 
         #region Database methods
-        public void LoadDb()
-        {
-            MainWindowViewModel.Database.Автобусы.Load();
-            MainWindowViewModel.Database.Водители.Load();
-            MainWindowViewModel.Database.Время.Load();
-            MainWindowViewModel.Database.Маршруты.Load();
-            MainWindowViewModel.Database.Остановки.Load();
-            MainWindowViewModel.Database.Расписания.Load();
-            MainWindowViewModel.Database.ВремяРасписанияОстановки.Load();
-            MainWindowViewModel.Database.ТипыАвтобусов.Load();
-        }
+        
 
         public void SetDataSource(object tableName)
         {

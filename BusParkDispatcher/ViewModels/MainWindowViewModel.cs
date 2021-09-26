@@ -6,6 +6,7 @@ using BusParkDispatcher.Views.Windows;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -99,11 +100,26 @@ namespace BusParkDispatcher.ViewModels
             SelectedLanguage = App.Language;
             OpenMain?.Execute();
 
+            LoadDb();
+
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
         #endregion
 
         #region Commands / Methods
+        public void LoadDb()
+        {
+            MainWindowViewModel.Database.Автобусы.Load();
+            MainWindowViewModel.Database.Водители.Load();
+            MainWindowViewModel.Database.Время.Load();
+            MainWindowViewModel.Database.Маршруты.Load();
+            MainWindowViewModel.Database.Остановки.Load();
+            MainWindowViewModel.Database.Расписания.Load();
+            MainWindowViewModel.Database.ВремяРасписанияОстановки.Load();
+            MainWindowViewModel.Database.ТипыАвтобусов.Load();
+            MainWindowViewModel.Database.КоличествоОстановокНаМаршрутеВодителя.Load();
+        }
+
         public void ChangeView(UserControl userControl) => CurrentView = userControl;
 
         public DelegateCommand OpenMain => new DelegateCommand((obj) =>
