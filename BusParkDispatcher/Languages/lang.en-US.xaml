@@ -12,6 +12,8 @@
 
     <!--#region Additional-->
     <mscorlib:String x:Key="EscapeFromAdditionalWindowText">Press Esc to close this window......</mscorlib:String>
+    <mscorlib:String x:Key="CreateReportButtonText">Create report</mscorlib:String>
+    <mscorlib:String x:Key="CreateReportButtonToolTip">Lets you create the selected report and save it to a Microsoft Office file.</mscorlib:String>
 
     <!--#region BusesAdditionView-->
     <mscorlib:String x:Key="BusesAdditionViewTitle">Buses addition</mscorlib:String>
@@ -63,6 +65,18 @@
     <mscorlib:String x:Key="DriversAssignViewDriverWatermark">Driver id</mscorlib:String>
     <mscorlib:String x:Key="DriversAssignViewBusWatermark">Bus id</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region HoursInDriveReportView-->
+    <mscorlib:String x:Key="HoursInDriveReportViewTitle">Creating a report on the amount of time worked by the driver</mscorlib:String>
+    <mscorlib:String x:Key="HoursInDriveReportViewDriverWatermark">Driver id</mscorlib:String>
+    <mscorlib:String x:Key="HoursInDriveReportViewCreateReportForAllButtonText">Create report for all drivers</mscorlib:String>
+    <!--#endregion-->
+
+    <!--#region TimetableReportView-->
+    <mscorlib:String x:Key="TimetableReportViewTitle">Creating report on the current timetable</mscorlib:String>
+    <mscorlib:String x:Key="TimetableReportViewRouteWatermark">Route id</mscorlib:String>
+    <mscorlib:String x:Key="TimetableReportViewCreateReportForAllButtonText">Create report for all routes</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
@@ -88,8 +102,8 @@
     <!--#region ReportsView-->
     <mscorlib:String x:Key="ReportBuilderMasterTitleTextBlockText">Report builder master</mscorlib:String>
     <mscorlib:String x:Key="ReportTimetableTextBlockText">Timetable report</mscorlib:String>
-    <mscorlib:String x:Key="Report2TextBlockText">Report 2</mscorlib:String>
-    <mscorlib:String x:Key="Report3TextBlockText">Report 3</mscorlib:String>
+    <mscorlib:String x:Key="ReportRouteInfoTextBlockText">Route info report</mscorlib:String>
+    <mscorlib:String x:Key="ReportHoursInDriveTextBlockText">Hours in drive</mscorlib:String>
     <mscorlib:String x:Key="ReportBusesOnTheRoutesTextBlockText">Buses on the routes</mscorlib:String>
     <!--#endregion-->
 

@@ -12,6 +12,8 @@
 
     <!--#region Additional-->
     <mscorlib:String x:Key="EscapeFromAdditionalWindowText">Нажмите Esc чтобы вернуться......</mscorlib:String>
+    <mscorlib:String x:Key="CreateReportButtonText">Создать отчет</mscorlib:String>
+    <mscorlib:String x:Key="CreateReportButtonToolTip">Позволяет создать выбранный отчет и сохранить его в файл пакета Microsoft Office.</mscorlib:String>
     
     <!--#region BusesAdditionView-->
     <mscorlib:String x:Key="BusesAdditionViewTitle">Добавление автобусов</mscorlib:String>
@@ -63,6 +65,18 @@
     <mscorlib:String x:Key="DriversAssignViewDriverWatermark">Код водителя</mscorlib:String>
     <mscorlib:String x:Key="DriversAssignViewBusWatermark">Код автобуса</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region HoursInDriveReportView-->
+    <mscorlib:String x:Key="HoursInDriveReportViewTitle">Создание отчета о количестве отработанного времени водителем</mscorlib:String>
+    <mscorlib:String x:Key="HoursInDriveReportViewDriverWatermark">Код водителя</mscorlib:String>
+    <mscorlib:String x:Key="HoursInDriveReportViewCreateReportForAllButtonText">Создать отчет для всех водителей</mscorlib:String>
+    <!--#endregion-->
+    
+    <!--#region TimetableReportView-->
+    <mscorlib:String x:Key="TimetableReportViewTitle">Создание отчета о текущем расписании</mscorlib:String>
+    <mscorlib:String x:Key="TimetableReportViewRouteWatermark">Код расписания</mscorlib:String>
+    <mscorlib:String x:Key="TimetableReportViewCreateReportForAllButtonText">Создать отчет для всех маршрутов</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
@@ -88,8 +102,8 @@
     <!--#region ReportsView-->
     <mscorlib:String x:Key="ReportBuilderMasterTitleTextBlockText">Мастер создания отчетов</mscorlib:String>
     <mscorlib:String x:Key="ReportTimetableTextBlockText">Расписание</mscorlib:String>
-    <mscorlib:String x:Key="Report2TextBlockText">Отчет 2</mscorlib:String>
-    <mscorlib:String x:Key="Report3TextBlockText">Отчет 3</mscorlib:String>
+    <mscorlib:String x:Key="ReportRouteInfoTextBlockText">Полная инф. о маршруте</mscorlib:String>
+    <mscorlib:String x:Key="ReportHoursInDriveTextBlockText">Кол-во отраб. часов</mscorlib:String>
     <mscorlib:String x:Key="ReportBusesOnTheRoutesTextBlockText">Автобусы на маршрутах</mscorlib:String>
     <!--#endregion-->
     
