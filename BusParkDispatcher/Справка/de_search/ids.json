@@ -1,0 +1,17 @@
+{
+	"1": ["Начальная... Требуется Advanced-лицензия!", "index.htm", []],
+	"2": ["1. Начало работы с п... Требуется Advanced-лицензия!", "nachalo_raboty_s_programmnym_sredstvom.htm", []],
+	"3": ["1.1. О п... Требуется Advanced-лицензия!", "o_programme.htm", [1]],
+	"4": ["1.2. Пер... Требуется Advanced-лицензия!", "pervye_shagi.htm", [1]],
+	"5": ["2. Работа с ... Требуется Advanced-лицензия!", "rabota_s_bazoj_dannykh.htm", []],
+	"6": ["2.1. Добавление нов... Требуется Advanced-лицензия!", "dobavlenie_novykh_zapisej_v_tablitsu.htm", [2]],
+	"7": ["2.2. Отмена вне... Требуется Advanced-лицензия!", "otmena_vnesennykh_izmenenij.htm", [2]],
+	"8": ["2.3. Сохране... Требуется Advanced-лицензия!", "sokhranenie_izmenenij.htm", [2]],
+	"9": ["2.4. Поиск... Требуется Advanced-лицензия!", "poisk_po_tablitse.htm", [2]],
+	"10": ["2.5. Сортир... Требуется Advanced-лицензия!", "sortirovka_dannykh.htm", [2]],
+	"11": ["3. Создан... Требуется Advanced-лицензия!", "sozdanie_otchetov.htm", []],
+	"12": ["3.1. Создание расписани... Требуется Advanced-лицензия!", "sozdanie_raspisaniya_dvizheniya_dlya_marshruta.htm", [3]],
+	"13": ["3.2. Создание отчета о колич... Требуется Advanced-лицензия!", "sozdanie_otcheta_o_kolichestve_avtobusov_na_marshrutakh.htm", [3]],
+	"14": ["3.3. Создание отчета пол... Требуется Advanced-лицензия!", "sozdanie_otcheta_polnoj_informatsii_o_marshrute.htm", [3]],
+	"15": ["3.4. Создание отчета за месяц о количес... Требуется Advanced-лицензия!", "sozdanie_otcheta_za_mesyats_o_kolichestve_chasov__otrabotannykh_kazhdym_voditelem.htm", [3]]
+}
