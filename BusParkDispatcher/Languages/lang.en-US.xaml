@@ -3,6 +3,10 @@
                     xmlns:local="clr-namespace:BusParkDispatcher.Languages"
                     xmlns:mscorlib="clr-namespace:System;assembly=mscorlib">
 
+    <!--#region Notifications-->
+    <mscorlib:String x:Key="LanguageChangedText">Language was changed on en-US.</mscorlib:String>
+    <!--#endregion-->
+    
     <!--#region MainWindow-->
     <mscorlib:String x:Key="ProjectTitle">Диспетчерская автобусного парка №3</mscorlib:String>
     <mscorlib:String x:Key="MainRadioButtonText">Main</mscorlib:String>
@@ -83,6 +87,12 @@
     <mscorlib:String x:Key="RouteInfoReportViewRouteWatermark">Route id</mscorlib:String>
     <mscorlib:String x:Key="RouteInfoReportViewCreateReportForAllButtonText">Create report for all routes</mscorlib:String>
     <!--#endregion-->
+
+    <!--#region WorkPlanReportView-->
+    <mscorlib:String x:Key="WorkPlanReportViewTitle">Planning driver's work-time for a week</mscorlib:String>
+    <mscorlib:String x:Key="WorkPlanReportViewDriverWatermark">Driver id</mscorlib:String>
+    <mscorlib:String x:Key="WorkPlanReportViewCreateReportForAllButtonText">Create plan for all drivers</mscorlib:String>
+    <!--#endregion-->
     <!--#endregion-->
 
     <!--#region MainView-->
@@ -111,6 +121,7 @@
     <mscorlib:String x:Key="ReportRouteInfoTextBlockText">Route info report</mscorlib:String>
     <mscorlib:String x:Key="ReportHoursInDriveTextBlockText">Hours in drive</mscorlib:String>
     <mscorlib:String x:Key="ReportBusesOnTheRoutesTextBlockText">Buses on the routes</mscorlib:String>
+    <mscorlib:String x:Key="ReportWorkPlanTextBlockText">Work planning</mscorlib:String>
     <!--#endregion-->
 
     <!--#region ToolTipsStyles-->

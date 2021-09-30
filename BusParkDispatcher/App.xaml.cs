@@ -75,6 +75,8 @@ namespace BusParkDispatcher
 
 				// Вызываем ивент для оповещения всех окон.
 				LanguageChanged?.Invoke(Current, new EventArgs());
+
+				NotificationManager.ShowInformation(dict["LanguageChangedText"]?.ToString());
 			}
 		}
 		#endregion
