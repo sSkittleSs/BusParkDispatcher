@@ -3,16 +3,18 @@ using System.Reflection;
 
 namespace BusParkDispatcher.Infrastructure
 {
-    public class DbTable
+    public abstract class DbTable
     {
-        public virtual bool IsSearchable(string value)
+        public virtual bool IsSearchable(string value) => IsSearchable(this, value);
+
+        public static bool IsSearchable(object obj, string value)
         {
-            Type type = GetType();
+            Type type = obj.GetType();
             PropertyInfo[] props = type.GetProperties();
             foreach (PropertyInfo prop in props)
             {
-                object val = prop.GetValue(this);
-                if (!val.GetType().IsPrimitive && !(val is string))
+                object val = prop.GetValue(obj);
+                if (!(val?.GetType().IsPrimitive ?? true) && !(val is string))
                 {
                     continue;
                 }
