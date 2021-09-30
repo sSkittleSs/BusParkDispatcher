@@ -32,7 +32,6 @@ namespace BusParkDispatcher.ViewModels
         public DelegateCommand CreateTimetableReport => new DelegateCommand((obj) =>
             CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new TimetableReportAdditionalView() } }.ShowDialog() ?? false));
 
-
         public DelegateCommand CreateRouteInfoReport => new DelegateCommand((obj) =>
             CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new RouteInfoReportAdditionalView() } }.ShowDialog() ?? false));
 
@@ -52,6 +51,9 @@ namespace BusParkDispatcher.ViewModels
             SaveReportToExcelFile(new BusesOnTheRouteReport(busesOnTheRoutes));
 
         });
+
+        public DelegateCommand CreateWorkPlanReport => new DelegateCommand((obj) =>
+            CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new WorkPlanReportAdditionalView() } }.ShowDialog() ?? false));
 
         public static bool SaveReportToExcelFile(IExcelReportGeneratable report)
         {

@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusParkDispatcher.App">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAgAAAAAAAAAQAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Commands.Base.Command">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusParkDispatcher.Commands.Base.DelegateCommand">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Commands.CloseApplicationCommand">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CloseApplicationCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Commands.DragWindowCommand">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\DragWindowCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Commands.MinimizeApplicationCommand">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MinimizeApplicationCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Commands.OpenHelpCommand">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\OpenHelpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Controls.BluredTextButton">
+    <Position X="16.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAQAAAAAAAAAAAAAIAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Controls\BluredTextButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Controls.CornerTextBox">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABgAAAAAAAAAAAAEAAAAAAAIAABBBAAAAg=</HashCode>
+      <FileName>Controls\CornerTextBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Controls.IconButton">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAACAADAAAAASAAgAEAAAA=</HashCode>
+      <FileName>Controls\IconButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Images.Icons.Add" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAACAADAAAAASAAgAEAAAA=</HashCode>
+      <FileName>Images\Icons\Add.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Images.Icons.Edit" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAgACAABAAAAAABAgAAAAAA=</HashCode>
+      <FileName>Images\Icons\Edit.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Images.Icons.Exit" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAACAABAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Images\Icons\Exit.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Images.Icons.Logout" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAgACAABAAAAAABAgAAAAAA=</HashCode>
+      <FileName>Images\Icons\Logout.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Images.Icons.Minimize" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAACAABAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Images\Icons\Minimize.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Images.Icons.Question" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAACAABAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Images\Icons\Question.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Infrastructure.DbTable">
+    <Position X="37.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\DbTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Infrastructure.Extensions">
+    <Position X="18" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Infrastructure\Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Infrastructure.Report">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAAIAAAAA=</HashCode>
+      <FileName>Infrastructure\Report.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusParkDispatcher.Models.BusesOnTheRoute">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\BusesOnTheRoute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.BusesOnTheRouteReport" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAABAAAIAAAAA=</HashCode>
+      <FileName>Models\BusesOnTheRouteReport.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Models.BusStopTime">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\BusStopTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.HoursInDriveReport">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAQCAAAAAAAAAgAAAAAAAAIAAAJABAQgAAAAAA=</HashCode>
+      <FileName>Models\HoursInDriveReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.NotificationManager">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAATAEAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\NotificationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.RouteInfoReport">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAIAAAAAAAAAIAAAFABAAAAAAAAA=</HashCode>
+      <FileName>Models\RouteInfoReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.TimetableReport">
+    <Position X="5.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAABCAAAAgAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\TimetableReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.WorkPlanReport">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAQCAAAAAAAAAgAAAAAAAAIAAANABAQgAAAAAA=</HashCode>
+      <FileName>Models\WorkPlanReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.ApplicationContext">
+    <Position X="11" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIABAAAACAAAQAAAAIAAEAAIAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Database\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.Автобусы">
+    <Position X="35.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQIAAAAAAAAAAAAAAAIAAAAIQAAEBAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Database\Автобусы.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.Водители">
+    <Position X="30.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAQAA=</HashCode>
+      <FileName>Models\Database\Водители.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.Время">
+    <Position X="37.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Models\Database\Время.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.ВремяРасписанияОстановки">
+    <Position X="39" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAACAAAAAAQAAAAAAAoAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Models\Database\ВремяРасписанияОстановки.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.КоличествоОстановокНаМаршрутеВодителя">
+    <Position X="40.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAQAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAA=</HashCode>
+      <FileName>Models\Database\КоличествоОстановокНаМаршрутеВодителя.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.Маршруты">
+    <Position X="42.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAACAAAAAAACAAAAAAgAAEAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Database\Маршруты.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.Остановки">
+    <Position X="44.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQAAQAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Database\Остановки.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.Расписания">
+    <Position X="32" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAAQAABAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Database\Расписания.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Models.Database.ТипыАвтобусов">
+    <Position X="33.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAIAAAAAQAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Database\ТипыАвтобусов.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Properties.Resources">
+    <Position X="12.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Properties.Settings">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.AdditionalWindowViewModel">
+    <Position X="33.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhACAAIAAgAIAAAACAAAAAAAAAAAIAAAAAAAABA=</HashCode>
+      <FileName>ViewModels\AdditionalWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.BusesAdditionViewModel">
+    <Position X="21.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEQIAAAAAQBAEAAAQAAAAAAAIQAAFAAAAAAAAABAI=</HashCode>
+      <FileName>ViewModels\BusesAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.BusesTypesAdditionViewModel">
+    <Position X="25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAIAAAACA=</HashCode>
+      <FileName>ViewModels\BusesTypesAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.BusStopsAdditionViewModel">
+    <Position X="28.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAIAAAACA=</HashCode>
+      <FileName>ViewModels\BusStopsAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.DataBaseViewModel">
+    <Position X="23.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAIAAAEgAAAACEAAAAEAAAQAADAFACAAADAAEAAwAAA=</HashCode>
+      <FileName>ViewModels\DataBaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.DriversAdditionViewModel">
+    <Position X="21.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAABAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\DriversAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.DriversAssignViewModel">
+    <Position X="25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIoAAAAAAAAAEABAAAAAIAAAAAAAAABAAAAAIAASAA=</HashCode>
+      <FileName>ViewModels\DriversAssignViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.HoursInDriveReportAdditionalViewModel">
+    <Position X="30.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAAAAAEAEAAAAAAAIAAAAAAAAAAAAAAAAAASAA=</HashCode>
+      <FileName>ViewModels\HoursInDriveReportAdditionalViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.MainWindowViewModel">
+    <Position X="32" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECghACGEICAggAAgAEAAAAAAgAAAAAAYAQAIAAAJA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.ObservableObject">
+    <Position X="27.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ObservableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.ReportsViewModel">
+    <Position X="23.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAgAAACAAEAAAAAgAAACAAAAQAAEA=</HashCode>
+      <FileName>ViewModels\ReportsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.RouteInfoReportAdditionalViewModel">
+    <Position X="26.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAAAAEBAEAAAQAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RouteInfoReportAdditionalViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.RoutesAdditionViewModel">
+    <Position X="28.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAACAAAACAACAAgAAAgAAAIAAAAIAAAACA=</HashCode>
+      <FileName>ViewModels\RoutesAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.TimetableReportAdditionViewModel">
+    <Position X="33.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAAAAEBAEAAAQAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TimetableReportAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.TimetablesAdditionViewModel">
+    <Position X="32" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAQAAAEAAAAABAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TimetablesAdditionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.TimeTimetableBusesViewModel">
+    <Position X="26.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICQAABAgAACAAAACASAAAgAAAoAAAIAAASAAAAAEA=</HashCode>
+      <FileName>ViewModels\TimeTimetableBusesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.ViewModels.WorkPlanReportAdditionalViewModel">
+    <Position X="30.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAAAAAEAEAAAAAAAIAAAAAAAAAAAAAAAAAASAA=</HashCode>
+      <FileName>ViewModels\WorkPlanReportAdditionalViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusParkDispatcher.Views.BusesAdditionView" BaseTypeListCollapsed="true">
+    <Position X="18" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\BusesAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.BusesTypesAdditionView" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\BusesTypesAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.BusStopsAdditionView" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\BusStopsAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.DataBaseView" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\DataBaseView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.DriversAdditionView" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\DriversAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.DriversAssignView" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\DriversAssignView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.HoursInDriveReportAdditionalView" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\HoursInDriveReportAdditionalView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.MainView" BaseTypeListCollapsed="true">
+    <Position X="11" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.ReportsView" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ReportsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.RouteInfoReportAdditionalView" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\RouteInfoReportAdditionalView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.RoutesAdditionView" BaseTypeListCollapsed="true">
+    <Position X="18" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\RoutesAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.TimetableReportAdditionalView" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TimetableReportAdditionalView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.TimetablesAdditionView" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TimetablesAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.TimeTimetablesBusesAdditionView" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TimeTimetablesBusesAdditionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.WorkPlanReportAdditionalView" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\WorkPlanReportAdditionalView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.Windows.AdditionalWindow" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\AdditionalWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusParkDispatcher.Views.Windows.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="BusParkDispatcher.Infrastructure.IExcelReportGeneratable">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAA=</HashCode>
+      <FileName>Infrastructure\IExcelReportGeneratable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

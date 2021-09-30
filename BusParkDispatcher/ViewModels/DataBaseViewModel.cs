@@ -46,13 +46,9 @@ namespace BusParkDispatcher.ViewModels
                 {
                     ChangeTable.Execute(lastTable);
                 }
-                else if (SearchText?.Length > value.Length)
-                {
-                    ChangeTable.Execute(lastTable);
-                    Items = Search(value);
-                }
                 else
                 {
+                    ChangeTable.Execute(lastTable);
                     Items = Search(value);
                 }
 
@@ -189,9 +185,9 @@ namespace BusParkDispatcher.ViewModels
         public IEnumerable<object> Search(string value)
         {
             ObservableCollection<object> items = new ObservableCollection<object>();
-            foreach (DbTable row in Items)
+            foreach (var row in Items)
             {
-                if (row.IsSearchable(value))
+                if (DbTable.IsSearchable(row, value))
                 {
                     items.Add(row);
                 }

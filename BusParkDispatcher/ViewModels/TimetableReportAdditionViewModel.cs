@@ -68,7 +68,7 @@ namespace BusParkDispatcher.ViewModels
             {
                 var excelPackage = new ExcelPackage();
                 foreach (var item in Маршруты)
-                    excelPackage = new TimetableReport(item.НомерМаршрута).AddNewSheet(excelPackage, $"Маршрут №{item.КодМаршрута}");
+                    excelPackage = new TimetableReport(item.НомерМаршрута).AddNewSheet(excelPackage, $"Маршрут №{item.НомерМаршрута}");
 
                 ReportsViewModel.SaveExcelPackage(excelPackage);
 
