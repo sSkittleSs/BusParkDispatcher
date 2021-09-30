@@ -82,7 +82,7 @@
             </Border>
             <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource ReportHoursInDriveTextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
-        <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource ReportGridStyle}">
+        <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource ReportGridStyle}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="Auto"/>
@@ -100,6 +100,25 @@
                 </Border.Background>
             </Border>
             <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource ReportBusesOnTheRoutesTextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportGridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding CreateWorkPlanReport}"/>
+            </Grid.InputBindings>
+            <Grid.ToolTip>
+                <Image Source="/Images/WorkPlanReportExample.png" Width="400" Height="200"/>
+            </Grid.ToolTip>
+            <Border Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource ReportBorderStyle}"/>
+            <Border CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 5">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Images/WorkPlanReportExample.png" Stretch="Fill" />
+                </Border.Background>
+            </Border>
+            <uc:BluredTextButton Grid.Row="1" Style="{StaticResource BluredTextButtonDefault}" Cursor="Arrow" Content="{DynamicResource ReportWorkPlanTextBlockText}" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="5 2"/>
         </Grid>
     </Grid>
 </UserControl>
