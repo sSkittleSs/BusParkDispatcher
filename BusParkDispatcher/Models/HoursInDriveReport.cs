@@ -60,23 +60,32 @@ namespace BusParkDispatcher.Models
             var timetable = bus.Маршруты.Расписания;
             var distincTimetable = new List<BusStopTime>();
 
-            foreach (var item in timetable.ВремяРасписанияОстановки.Where((obj) => obj.КодРасписания == timetable.КодРасписания))
+            foreach (var item in timetable.ВремяРасписанияОстановки)
             {
                 var busStop = new BusStopTime(item.Остановки.Название, item.Время.Время1, item.Остановки.Описание);
                 if (distincTimetable.Count((obj) => obj.НазваниеОстановки == busStop.НазваниеОстановки) == 0)
                     distincTimetable.Add(busStop);
             }
 
-            RunsAmount = distincTimetable.Count != 0 ? timetable.ВремяРасписанияОстановки.Count((obj) => obj.КодРасписания == timetable.КодРасписания) / distincTimetable.Count : 0;
+            RunsAmount = distincTimetable.Count != 0 ? timetable.ВремяРасписанияОстановки.Count / distincTimetable.Count : 0;
 
             var workedTime = new TimeSpan();
             var lastTime = new TimeSpan();
             var lawedTime = TimeSpan.FromMinutes(480);
 
-            foreach (var item in timetable.ВремяРасписанияОстановки.Where((obj) => obj.КодРасписания == timetable.КодРасписания))
+            foreach (var item in timetable.ВремяРасписанияОстановки)
             {
-                if (workedTime < lawedTime)
-                    workedTime += item.Время.Время1 - lastTime;
+                var nextWorkedTime = item.Время.Время1 - (lastTime > item.Время.Время1 ?
+                        -(new TimeSpan(24, 0, 0).Subtract(item.Время.Время1))
+                        : lastTime);
+
+                if (nextWorkedTime > new TimeSpan(2, 0, 0))
+                    break;
+
+                if (workedTime + nextWorkedTime < lawedTime)
+                    workedTime += nextWorkedTime;
+                else
+                    break;
 
                 lastTime = item.Время.Время1;
             }
