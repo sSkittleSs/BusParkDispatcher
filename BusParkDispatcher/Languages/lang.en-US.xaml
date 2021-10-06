@@ -68,6 +68,10 @@
     <mscorlib:String x:Key="DriversAssignViewTitle">Assign driver to bus</mscorlib:String>
     <mscorlib:String x:Key="DriversAssignViewDriverWatermark">Driver id</mscorlib:String>
     <mscorlib:String x:Key="DriversAssignViewBusWatermark">Bus id</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewDriversWatermark">Drivers</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewDriverName">Name</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewDriverPhoneNumber">Phone number</mscorlib:String>
+    <mscorlib:String x:Key="DriversAssignViewDriverId">Driver id</mscorlib:String>
     <!--#endregion-->
 
     <!--#region HoursInDriveReportView-->

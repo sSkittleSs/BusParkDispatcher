@@ -32,7 +32,7 @@ namespace BusParkDispatcher.ViewModels
         {
             set
             {
-                if (value.Length > 12 || !long.TryParse(value, out long result))
+                if (value.Length != 12 || !long.TryParse(value, out long result))
                     return;
 
                 SetProperty(ref номерТелефона, value);

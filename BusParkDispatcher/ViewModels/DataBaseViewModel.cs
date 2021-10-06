@@ -19,7 +19,6 @@ namespace BusParkDispatcher.ViewModels
     {
         #region Fields
         public IEnumerable<object> _items;
-        private int selectedItem = 1;
         private string searchText;
         private string lastTable;
         #endregion
@@ -29,12 +28,6 @@ namespace BusParkDispatcher.ViewModels
         {
             set => SetProperty(ref _items, value);
             get => _items;
-        }
-
-        public int SelectedItem
-        {
-            set => SetProperty(ref selectedItem, value);
-            get => selectedItem;
         }
 
         public string SearchText
@@ -119,6 +112,83 @@ namespace BusParkDispatcher.ViewModels
             }
         });
 
+        public DelegateCommand Delete => new DelegateCommand((obj) =>
+        {
+            try
+            {
+                if (MessageBox.Show($"Вы желаете удалить сущность '{obj}'?\n\nЭто действие невозможно отменить (однако в случае ошибочного удаления рекомендуется перезапустить приложение до нажатия на кнопку 'Сохранить изменения').", "Внимание", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    dynamic temp = obj;
+
+                    switch (lastTable)
+                    {
+                        case "Автобусы":
+                            MainWindowViewModel.Database.Автобусы.Local.Remove(
+                                MainWindowViewModel.Database.Автобусы.Local.FirstOrDefault((item) 
+                                => item.РегистрационныйНомер == temp.РегистрационныйНомер 
+                                    && item.ТипыАвтобусов.Наименование == temp.ТипАвтобуса 
+                                    && item.КоличествоМест == temp.КоличествоМест
+                                    && item.Маршруты.НомерМаршрута == temp.НомерМаршрута)
+                                );
+                            break;
+                        case "Водители":
+                            MainWindowViewModel.Database.Водители.Local.Remove(
+                                MainWindowViewModel.Database.Водители.Local.FirstOrDefault((item)
+                                => item.ФИО == temp.ФИО
+                                    && item.НомерТелефона == temp.НомерТелефона)
+                                );
+                            break;
+                        case "Время":
+                            NotificationManager.ShowWarning("Таблица ''Время'' не может быть изменена.");
+                            break;
+                        case "ВремяРасписанияОстановки":
+                            MainWindowViewModel.Database.ВремяРасписанияОстановки.Local.Remove(
+                                MainWindowViewModel.Database.ВремяРасписанияОстановки.Local.FirstOrDefault((item)
+                                => item.Время.Время1 == temp.Время
+                                    && item.Остановки.Название == temp.Остановка
+                                    && item.Расписания.КодРасписания == temp.КодРасписания)
+                                );
+                            break;
+                        case "Маршруты":
+                            MainWindowViewModel.Database.Маршруты.Local.Remove(
+                                MainWindowViewModel.Database.Маршруты.Local.FirstOrDefault((item)
+                                => item.КодМаршрута == temp.КодМаршрута
+                                    && item.НомерМаршрута == temp.НомерМаршрута
+                                    && item.Описание == temp.Описание
+                                    && item.КодРасписания == temp.КодРасписания)
+                                );
+                            break;
+                        case "Остановки":
+                            MainWindowViewModel.Database.Остановки.Local.Remove(
+                                MainWindowViewModel.Database.Остановки.Local.FirstOrDefault((item)
+                                => item.Название == temp.Название
+                                    && item.Описание == temp.Описание)
+                                );
+                            break;
+                        case "Расписания":
+                            MainWindowViewModel.Database.Расписания.Local.Remove(
+                                MainWindowViewModel.Database.Расписания.Local.FirstOrDefault((item)
+                                => item.КодРасписания == temp.КодРасписания
+                                    && item.Дата == temp.Дата
+                                    && item.ЯвляетсяВыходным == temp.ЯвляетсяВыходным)
+                                );
+                            break;
+                        case "ТипыАвтобусов":
+                            MainWindowViewModel.Database.ТипыАвтобусов.Local.Remove(
+                                MainWindowViewModel.Database.ТипыАвтобусов.Local.FirstOrDefault((item)
+                                => item.Наименование == temp.Наименование
+                                    && item.Описание == temp.Описание)
+                                );
+                            break;
+                        default:
+                            break;
+                    }
+                    NotificationManager.ShowSuccess($"Из таблицы '{lastTable}' была удалена сущность '{obj}'!"); // Уведомляем пользователя об успехе операции, если исключений не возникло
+                }       
+            }
+            catch (Exception e) { NotificationManager.ShowError(e.Message); } // В случае возникновения исключений выводим сообщение об ошибке.
+        });
+
         public DelegateCommand AssignDriverToBus => new DelegateCommand((obj) =>
         {
             try
@@ -136,7 +206,7 @@ namespace BusParkDispatcher.ViewModels
                 {
                     MainWindowViewModel.Database.UndoChanges(); // Вызываем метод-расширение для отмены изменений
                     ChangeTable?.Execute(lastTable); // Заново загружаем последнюю таблицу данных
-                    NotificationManager.ShowSuccess($"Таблица '{lastTable}' успешно обновлена к значениям из БД!"); // Уведомляем пользователя об успехе операции, если исключений не возникло
+                    NotificationManager.ShowSuccess($"Изменения в базе данных успешно отменены."); // Уведомляем пользователя об успехе операции, если исключений не возникло
                 }
             }
             catch (Exception e) { NotificationManager.ShowError(e.Message); } // В случае возникновения исключений выводим сообщение об ошибке.

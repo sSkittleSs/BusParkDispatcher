@@ -96,7 +96,7 @@ namespace BusParkDispatcher.Models
                 currentRow++;
             }
 
-            sheet.Cells[firstTableRow, column, currentRow, column + 2].AutoFitColumns();
+            sheet.Cells[2, column, currentRow, column + 2].AutoFitColumns();
             sheet.Cells[firstTableRow, column, currentRow, column].Style.Numberformat.Format = "hh:mm";
 
             return package;

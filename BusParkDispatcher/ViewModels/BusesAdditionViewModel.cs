@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BusParkDispatcher.ViewModels
@@ -29,6 +30,12 @@ namespace BusParkDispatcher.ViewModels
             {
                 if (value.Length > 9)
                     return;
+
+                if (!new Regex(@"[а-яА-Яa-zA-Z]{2} \d{4}-[01234567]").IsMatch(value))
+                {
+                    NotificationManager.ShowWarning("Регистрационный номер автобуса должен иметь следующий формат: XX 9999-8\nгде X - любая буква, 9 - любая цифра, 8 - цифра в диапазоне [0, 7].");
+                    return;
+                }
 
                 SetProperty(ref регистрационныйНомер, value);
             }
