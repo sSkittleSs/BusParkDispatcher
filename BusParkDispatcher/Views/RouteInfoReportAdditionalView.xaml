@@ -40,7 +40,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button VerticalAlignment="Bottom" Content="{DynamicResource CreateReportButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding CreateReport}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="225" Margin="10">
+            <Button VerticalAlignment="Bottom" IsDefault="True" Content="{DynamicResource CreateReportButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding CreateReport}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="225" Margin="10">
                 <Button.ToolTip>
                     <ToolTip Content="{DynamicResource CreateReportButtonToolTip}"/>
                 </Button.ToolTip>

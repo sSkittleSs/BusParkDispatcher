@@ -25,10 +25,10 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
             <uc:CornerTextBox Margin="5 0" Text="{Binding ФИО, UpdateSourceTrigger=PropertyChanged}" WatermarkText="{DynamicResource DriversAdditionViewNameTextBoxWatermark}" VerticalAlignment="Bottom"/>
-            <uc:CornerTextBox Margin="5 0" Text="{Binding НомерТелефона, UpdateSourceTrigger=PropertyChanged}" WatermarkText="{DynamicResource DriversAdditionViewPhoneNumberBoxWatermark}" VerticalAlignment="Bottom"/>
+            <uc:CornerTextBox Margin="5 0" Text="{Binding НомерТелефона, UpdateSourceTrigger=LostFocus}" WatermarkText="{DynamicResource DriversAdditionViewPhoneNumberBoxWatermark}" VerticalAlignment="Bottom"/>
         </StackPanel>
 
-        <Button Grid.Row="2" VerticalAlignment="Bottom" Content="{DynamicResource AddItemButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Add}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="200" Margin="10">
+        <Button Grid.Row="2" IsDefault="True" VerticalAlignment="Bottom" Content="{DynamicResource AddItemButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Add}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="200" Margin="10">
             <Button.ToolTip>
                 <ToolTip Content="{DynamicResource ToolTipAddItemButtonText}"/>
             </Button.ToolTip>

@@ -58,7 +58,12 @@
                   ColumnHeaderStyle="{StaticResource CenterGridHeaderStyle}" 
                   RowStyle="{StaticResource CenterGridRowStyle}" 
                   CellStyle="{StaticResource DataGridCellStyle}" 
-                  SelectionMode="Single" SelectionUnit="Cell" IsReadOnly="False" Margin="10 0"/>
+                  SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="False" Margin="10 0"
+                  x:Name="dg">
+            <DataGrid.InputBindings>
+                <KeyBinding Key="Delete" Command="{Binding Delete}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+            </DataGrid.InputBindings>
+        </DataGrid>
 
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0">

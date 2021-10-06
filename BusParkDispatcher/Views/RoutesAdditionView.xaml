@@ -41,7 +41,7 @@
             </StackPanel>
         </StackPanel>
 
-        <Button Grid.Row="2" VerticalAlignment="Bottom" Content="{DynamicResource AddItemButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Add}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="200" Margin="10">
+        <Button Grid.Row="2" IsDefault="True" VerticalAlignment="Bottom" Content="{DynamicResource AddItemButtonText}" Style="{StaticResource ButtonDefault}" Command="{Binding Add}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Width="200" Margin="10">
             <Button.ToolTip>
                 <ToolTip Content="{DynamicResource ToolTipAddItemButtonText}"/>
             </Button.ToolTip>
