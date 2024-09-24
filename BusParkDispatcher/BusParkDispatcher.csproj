@@ -99,8 +99,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\ChangeViewByNameCommand.cs" />
+    <Compile Include="Controls\PasswordBoxAssistant.cs" />
+    <Compile Include="Infrastructure\MailValidator.cs" />
+    <Compile Include="Infrastructure\SecurityCryptography.cs" />
+    <Compile Include="Models\Database\Пользователи.cs" />
+    <Compile Include="Models\MailManager.cs" />
     <Compile Include="Models\WorkPlanReport.cs" />
+    <Compile Include="ViewModels\EmailConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\PasswordRecoveryViewModel.cs" />
+    <Compile Include="ViewModels\SignInViewModel.cs" />
+    <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="ViewModels\WorkPlanReportAdditionalViewModel.cs" />
+    <Compile Include="Views\EmailConfirmationView.xaml.cs">
+      <DependentUpon>EmailConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PasswordRecoveryView.xaml.cs">
+      <DependentUpon>PasswordRecoveryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInView.xaml.cs">
+      <DependentUpon>SignInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignUpView.xaml.cs">
+      <DependentUpon>SignUpView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WorkPlanReportAdditionalView.xaml.cs">
       <DependentUpon>WorkPlanReportAdditionalView.xaml</DependentUpon>
     </Compile>
@@ -200,11 +222,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EmailConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HoursInDriveReportAdditionalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PasswordRecoveryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +247,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RoutesAdditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignUpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

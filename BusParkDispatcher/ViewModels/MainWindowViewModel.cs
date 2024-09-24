@@ -23,9 +23,10 @@ namespace BusParkDispatcher.ViewModels
         private static int windowHeight = 460;
         private static int maxControlWidth = 796;
         private static int maxControlHeight = 380;
-        private UserControl currentView;
+        private object currentView;
         private List<CultureInfo> languages;
         private CultureInfo selectedLanguage;
+        public static Пользователи currentUser = null;
         #endregion
 
         #region Properties
@@ -66,7 +67,7 @@ namespace BusParkDispatcher.ViewModels
 
         public static MainWindow MainWindow { set; get; } = (MainWindow)Application.Current.MainWindow;
 
-        public UserControl CurrentView
+        public object CurrentView
         {
             set => SetProperty(ref currentView, value);
             get => currentView;
@@ -76,6 +77,12 @@ namespace BusParkDispatcher.ViewModels
         {
             set => SetProperty(ref languages, value);
             get => languages;
+        }
+
+        public Пользователи CurrentUser
+        {
+            set => SetProperty(ref currentUser, value);
+            get => currentUser;
         }
 
         public CultureInfo SelectedLanguage
@@ -98,7 +105,7 @@ namespace BusParkDispatcher.ViewModels
             Languages = App.Languages;
             App.Language = BusParkDispatcher.Properties.Settings.Default.DefaultLanguage;
             SelectedLanguage = App.Language;
-            OpenMain?.Execute();
+            ChangeView(Activator.CreateInstance(System.Reflection.Assembly.GetExecutingAssembly().GetType("BusParkDispatcher.Views.SignInView")));
 
             LoadDb();
 
@@ -120,22 +127,27 @@ namespace BusParkDispatcher.ViewModels
             MainWindowViewModel.Database.КоличествоОстановокНаМаршрутеВодителя.Load();
         }
 
-        public void ChangeView(UserControl userControl) => CurrentView = userControl;
+        public void ChangeView(object userControl) => CurrentView = userControl;
 
-        public DelegateCommand OpenMain => new DelegateCommand((obj) =>
+        public DelegateCommand OpenView => new DelegateCommand((obj) =>
         {
-            ChangeView(new MainView());
+            try
+            {
+                if (CurrentUser == null && (obj.ToString() != "SignUpView" && obj.ToString() != "SignInView"))
+                {
+                    NotificationManager.ShowWarning("Для выполнения данного действия требуется авторизация!");
+                    return;
+                }
+                if (obj is string viewName) ChangeView(Activator.CreateInstance(System.Reflection.Assembly.GetExecutingAssembly().GetType("BusParkDispatcher.Views." + viewName)));
+            }
+            catch (Exception e) { NotificationManager.ShowError(e.Message); }
         });
 
-        public DelegateCommand OpenDataBase => new DelegateCommand((obj) =>
-        {
-            ChangeView(new DataBaseView());
-        });
+        public DelegateCommand ReloadDatabase => new DelegateCommand((obj) => { LoadDb(); });
 
-        public DelegateCommand OpenReports => new DelegateCommand((obj) =>
-        {
-            ChangeView(new ReportsView());
-        });
+        public static void ChangeView(string viewName) => GetCurrentViewModel().OpenView.Execute(viewName);
+
+        public static MainWindowViewModel GetCurrentViewModel() => (MainWindowViewModel)MainWindow.DataContext;
         #endregion
     }
 }

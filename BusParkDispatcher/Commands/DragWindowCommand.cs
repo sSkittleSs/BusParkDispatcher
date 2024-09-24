@@ -11,7 +11,10 @@ namespace BusParkDispatcher.Commands
         public override void Execute(object parameter = null)
         {
             if (parameter is Window window)
+            {
+                window.WindowState = WindowState.Normal;
                 window.DragMove();
+            }
         }
     }
 }

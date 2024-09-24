@@ -81,6 +81,8 @@ namespace BusParkDispatcher.Models
             var lastTime = new TimeSpan();
             var lawedTime = TimeSpan.FromMinutes(480);
 
+            var времяРаспОст = timetable.ВремяРасписанияОстановки.OrderBy((item) => item.Время.Время1);
+
             var random = new Random();
             for (int i = 0; i < Timetable.Count; i++)
             {
@@ -88,11 +90,11 @@ namespace BusParkDispatcher.Models
 
                 for (int j = randomTurn * distincTimetable.Count; j < timetable.ВремяРасписанияОстановки.Count; j = (j + 1) % timetable.ВремяРасписанияОстановки.Count)
                 {
-                    var nextWorkedTime = timetable.ВремяРасписанияОстановки.ElementAt(j).Время.Время1 - (Timetable[i].Count != 0 ?
-                            (lastTime > timetable.ВремяРасписанияОстановки.ElementAt(j).Время.Время1 ?
-                                -(new TimeSpan(24, 0, 0).Subtract(timetable.ВремяРасписанияОстановки.ElementAt(j).Время.Время1))
+                    var nextWorkedTime = времяРаспОст.ElementAt(j).Время.Время1 - (Timetable[i].Count != 0 ?
+                            (lastTime > времяРаспОст.ElementAt(j).Время.Время1 ?
+                                -(new TimeSpan(24, 0, 0).Subtract(времяРаспОст.ElementAt(j).Время.Время1))
                                 : lastTime)
-                            : timetable.ВремяРасписанияОстановки.ElementAt(j).Время.Время1);
+                            : времяРаспОст.ElementAt(j).Время.Время1);
 
                     if (nextWorkedTime > new TimeSpan(2, 0, 0))
                         break;
@@ -101,14 +103,14 @@ namespace BusParkDispatcher.Models
                     {
                         workedTime += nextWorkedTime;
 
-                        Timetable[i].Add(new BusStopTime(timetable.ВремяРасписанияОстановки.ElementAt(j).Остановки.Название, timetable.ВремяРасписанияОстановки.ElementAt(j).Время.Время1));
+                        Timetable[i].Add(new BusStopTime(времяРаспОст.ElementAt(j).Остановки.Название, времяРаспОст.ElementAt(j).Время.Время1));
                     }
                     else
                     {
                         break;
                     }
 
-                    lastTime = timetable.ВремяРасписанияОстановки.ElementAt(j).Время.Время1;
+                    lastTime = времяРаспОст.ElementAt(j).Время.Время1;
                 }
 
                 workedTimeForWeek = workedTimeForWeek.Add(workedTime);

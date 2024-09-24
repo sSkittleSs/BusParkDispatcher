@@ -64,6 +64,11 @@ namespace BusParkDispatcher.ViewModels
         {
             try
             {
+                if (!Пользователи.HasAdminPermissions())
+                {
+                    Пользователи.HasNotPermissionNotification();
+                    return;
+                }
                 // Спрашиваем согласие пользователя на сохранение изменений.
                 if (MessageBox.Show("Вы желаете сохранить изменения?", "Внимание", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
@@ -81,7 +86,12 @@ namespace BusParkDispatcher.ViewModels
 
         public DelegateCommand Add => new DelegateCommand((obj) =>
         {
-            switch(lastTable)
+            if (!Пользователи.HasAdminPermissions())
+            {
+                Пользователи.HasNotPermissionNotification();
+                return;
+            }
+            switch (lastTable)
             {
                 case "Автобусы":
                     CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new BusesAdditionView() } }.ShowDialog() ?? false);
@@ -114,6 +124,11 @@ namespace BusParkDispatcher.ViewModels
 
         public DelegateCommand Delete => new DelegateCommand((obj) =>
         {
+            if (!Пользователи.HasAdminPermissions())
+            {
+                Пользователи.HasNotPermissionNotification();
+                return;
+            }
             try
             {
                 if (MessageBox.Show($"Вы желаете удалить сущность '{obj}'?\n\nЭто действие невозможно отменить (однако в случае ошибочного удаления рекомендуется перезапустить приложение до нажатия на кнопку 'Сохранить изменения').", "Внимание", button: MessageBoxButton.YesNo, icon: MessageBoxImage.Warning) == MessageBoxResult.Yes)
@@ -140,7 +155,7 @@ namespace BusParkDispatcher.ViewModels
                             break;
                         case "Время":
                             NotificationManager.ShowWarning("Таблица ''Время'' не может быть изменена.");
-                            break;
+                            return;
                         case "ВремяРасписанияОстановки":
                             MainWindowViewModel.Database.ВремяРасписанияОстановки.Local.Remove(
                                 MainWindowViewModel.Database.ВремяРасписанияОстановки.Local.FirstOrDefault((item)
@@ -191,6 +206,11 @@ namespace BusParkDispatcher.ViewModels
 
         public DelegateCommand AssignDriverToBus => new DelegateCommand((obj) =>
         {
+            if (!Пользователи.HasAdminPermissions())
+            {
+                Пользователи.HasNotPermissionNotification();
+                return;
+            }
             try
             {
                 CheckDialogResult(() => new AdditionalWindow() { DataContext = new AdditionalWindowViewModel() { CurrentView = new DriversAssignView() } }.ShowDialog() ?? false);
@@ -199,6 +219,11 @@ namespace BusParkDispatcher.ViewModels
 
         public DelegateCommand UndoChanges => new DelegateCommand((obj) =>
         {
+            if (!Пользователи.HasAdminPermissions())
+            {
+                Пользователи.HasNotPermissionNotification();
+                return;
+            }
             try
             {
                 // Спрашиваем согласие пользователя на отмену внесенных изменений.

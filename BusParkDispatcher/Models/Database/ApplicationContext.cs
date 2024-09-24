@@ -13,6 +13,7 @@ namespace BusParkDispatcher.Models.Database
         }
 
         public virtual DbSet<Автобусы> Автобусы { get; set; }
+        public virtual DbSet<Пользователи> Пользователи{ get; set; }
         public virtual DbSet<Водители> Водители { get; set; }
         public virtual DbSet<Время> Время { get; set; }
         public virtual DbSet<ВремяРасписанияОстановки> ВремяРасписанияОстановки { get; set; }

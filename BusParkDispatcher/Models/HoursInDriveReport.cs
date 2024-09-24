@@ -60,7 +60,7 @@ namespace BusParkDispatcher.Models
             var timetable = bus.Маршруты.Расписания;
             var distincTimetable = new List<BusStopTime>();
 
-            foreach (var item in timetable.ВремяРасписанияОстановки)
+            foreach (var item in timetable.ВремяРасписанияОстановки.OrderBy((item) => item.Время.Время1))
             {
                 var busStop = new BusStopTime(item.Остановки.Название, item.Время.Время1, item.Остановки.Описание);
                 if (distincTimetable.Count((obj) => obj.НазваниеОстановки == busStop.НазваниеОстановки) == 0)
@@ -73,7 +73,7 @@ namespace BusParkDispatcher.Models
             var lastTime = new TimeSpan();
             var lawedTime = TimeSpan.FromMinutes(480);
 
-            foreach (var item in timetable.ВремяРасписанияОстановки)
+            foreach (var item in timetable.ВремяРасписанияОстановки.OrderBy((item) => item.Время.Время1))
             {
                 var nextWorkedTime = item.Время.Время1 - (lastTime > item.Время.Время1 ?
                         -(new TimeSpan(24, 0, 0).Subtract(item.Время.Время1))

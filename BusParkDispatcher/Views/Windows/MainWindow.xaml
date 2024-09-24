@@ -16,16 +16,19 @@
         Background="Transparent" 
         WindowStartupLocation="CenterScreen" 
         MinHeight="{Binding MinHeight}" MinWidth="{Binding MinWidth}">
-
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
     <Window.Resources>
+        <cmd:ChangeViewByNameCommand x:Key="ChangeView" />
         <cmd:CloseApplicationCommand x:Key="CloseApplicationCommand"/>
         <cmd:MinimizeApplicationCommand x:Key="MinimizeApplicationCommand"/>
         <cmd:OpenHelpCommand x:Key="OpenHelpCommand"/>
         <cmd:DragWindowCommand x:Key="DragWindowCommand"/>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" Command="{StaticResource ChangeView}" CommandParameter="SignInView"/>
+    </Window.InputBindings>
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" GlassFrameThickness="0" CornerRadius="0" />
     </WindowChrome.WindowChrome>
@@ -63,9 +66,9 @@
             <!--#region Menu-->
             <Border Grid.Row="0" BorderBrush="#FF535353" Background="#FFFFF4F4" BorderThickness="0 0 0 1"/>
             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                <RadioButton Content="{DynamicResource MainRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenMain}" IsChecked="True"/>
-                <RadioButton Content="{DynamicResource DatabaseRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenDataBase}"/>
-                <RadioButton Content="{DynamicResource ReportsRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{Binding OpenReports}"/>
+                <RadioButton Content="{DynamicResource MainRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{StaticResource ChangeView}" CommandParameter="MainView" IsChecked="False"/>
+                <RadioButton Content="{DynamicResource DatabaseRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{StaticResource ChangeView}" CommandParameter="DataBaseView"/>
+                <RadioButton Content="{DynamicResource ReportsRadioButtonText}" Style="{StaticResource RadioButtonMenuStyle}" Command="{StaticResource ChangeView}" CommandParameter="ReportsView"/>
             </StackPanel>
 
             <ComboBox Grid.Row="0" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Style="{StaticResource ComboBox}" Width="75" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0"/>

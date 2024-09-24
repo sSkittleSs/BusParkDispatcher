@@ -39,7 +39,7 @@ namespace BusParkDispatcher.Models
             Date = расписание.Дата;
             IsWeekend = расписание.ЯвляетсяВыходным;
 
-            foreach (var item in расписание.ВремяРасписанияОстановки.Where((obj) => obj.КодРасписания == кодРасписания))
+            foreach (var item in расписание.ВремяРасписанияОстановки.Where((obj) => obj.КодРасписания == кодРасписания).OrderBy((item) => item.Время.Время1))
             {
                 var busStop = new BusStopTime(item.Остановки.Название, item.Время.Время1, item.Остановки.Описание);
                 if (Timetable.Count((obj) => obj.НазваниеОстановки == busStop.НазваниеОстановки) == 0)
